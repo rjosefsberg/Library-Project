@@ -61,7 +61,7 @@ public class DBHelper
         }
     }
 
-    public void dbPopulate()//set up a mySQL database with the info in the connection string in dbConnect(). Thisll populate it with our patron table. I'll update it with the "Book" table ASAP. This will make testing markedly easier.
+    public void dbPopulate()//set up a mySQL database with the info in the connection string in dbConnect(). Thisll populate it with the patron and book table. 
     {
         String patronTableString = "CREATE DATABASE  IF NOT EXISTS `libdb`; USE `libdb`; DROP TABLE IF EXISTS `patron`;" +
         "CREATE TABLE `patron` (" +
@@ -123,6 +123,7 @@ public class DBHelper
         "Checked_Out CHAR(1) NOT NULL DEFAULT 'N'," +
         "Out_Date Date," +
         "Due_Date Date," +
+        "By_patron int(5) NULL," +
         "PRIMARY KEY (ISBN));";
 
         String bookDataString =
