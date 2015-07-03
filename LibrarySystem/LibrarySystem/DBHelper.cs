@@ -63,7 +63,7 @@ public class DBHelper
 
     public void dbPopulate()//set up a mySQL database with the info in the connection string in dbConnect(). Thisll populate it with our patron table. I'll update it with the "Book" table ASAP. This will make testing markedly easier.
     {
-        String createString = "CREATE DATABASE  IF NOT EXISTS `libdb`; USE `libdb`; DROP TABLE IF EXISTS `patron`;" +
+        String patronTableString = "CREATE DATABASE  IF NOT EXISTS `libdb`; USE `libdb`; DROP TABLE IF EXISTS `patron`;" +
         "CREATE TABLE `patron` (" +
           "`Patron_ID` int(5) NOT NULL, " +
           "`Last_Name` varchar(20) DEFAULT NULL, " + 
@@ -78,7 +78,7 @@ public class DBHelper
 
         
 
-        String dataString =
+        String patronDataString =
             "LOCK TABLES `patron` WRITE;" +
 
         "INSERT INTO `patron` VALUES (10001,'Clark','Ann','goodgirl@gmail.com','4042992999','310 Simpson Court','Atlanta','Ga')," +
@@ -108,9 +108,90 @@ public class DBHelper
                              "ALTER TABLE `patron` ADD `Inactive` BOOLEAN DEFAULT FALSE;" +
                              "UNLOCK TABLES;";
 
-        this.dbUpdate(createString);
-        this.dbUpdate(dataString);
+        this.dbUpdate(patronTableString);
+        this.dbUpdate(patronDataString);
         this.dbUpdate(alterString);
+
+        String bookTableString = "DROP TABLE IF EXISTS `Books`;" +
+        "CREATE TABLE Books (" +
+        "ISBN BIGINT(13) NOT NULL," +
+        "Title Varchar(50),"+ 
+        "Author_Lastname Varchar(40)," + 
+        "Author_Firstname Varchar(30)," +
+        "Publication_date date," +
+        "Shelf_ID Varchar(6) NOT NULL," +
+        "Checked_Out CHAR(1) NOT NULL DEFAULT 'N'," +
+        "Out_Date Date," +
+        "Due_Date Date," +
+        "PRIMARY KEY (ISBN));";
+
+        String bookDataString =
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) " +
+
+        "VALUES(9870691147147,'Digitized','Bentley','Peter','2011-01-07','004.00','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9781439856185,'Computer Science Literacy','Idziorek','Joseph','2012-11-25','004.01','N', null,null);" +
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9781461411673,'Computer Science','Aho','Alfred','2011-04-21','004.02','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9789535104360,'Software Product Line','Elfaki','Abdelrahman','2012-04-16','004.03','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780199234004,'A Dictionary of Computing','Wright','Edumund','2008-02-26','004.04','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9781600215186,'Computer Science Reasearch Trends','Yarnall','Casey','2001-12-31','004.05','N', null,null);" +
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) " +
+
+        "VALUES(9781599049380,'Information Security and Ethics','Nemati','Hamid','2007-09-30','004.06','N', null,null);" +
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780262018326,'On Computing','Rosenbloom','Paul','2013-09-12','004.07','N', null,null);" +
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9781590209745,'Hacking the Future','Stryker','Cole','2012-09-13','004.08','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780133406955,'Visual Basic 2012 How To Program','Deitel','Paul','2013-05-01','004.09','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780133439854,'C++11 FOR Programmers','Deitel','Harvey','2013-03-13','004.10','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9781285160719,'Comp TIA a+ 220-801-220-802 Q&a','Staff','John','2013-03-15','004.11','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(978146659935,'IOS Game Development','Lucka','Thomas','2013-09-04','004.12','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780321918932,'Foundations of Web Design','Michaud','Thomas','2013-08-21','004.13','N', null,null);" +
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780203909782,'Software Process Quality','Kenett','Ron','1999-01-22','004.14','N', null,null);"+
+
+        "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
+
+        "VALUES(9780387301624,'Encyclopedia of Algorithms','Yang','Ming','2008-07-07','004.15','N', null,null);";
+
+        dbUpdate(bookTableString);
+        dbUpdate(bookDataString);
     }
 }
 
