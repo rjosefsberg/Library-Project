@@ -5,8 +5,10 @@ public class LibrarySystem
 {
     public static void Main(string[] args)
     {
-        DBHelper db = new DBHelper();
-        db.dbPopulate();
-       
+        //Application.EnableVisualStyles();
+        //Application.SetCompatibleTextRenderingDefault(false);
+        //Application.Run(new LibraryGUI());
+        //DBHelper db = new DBHelper();
+        //db.dbPopulate();      
     }
 }

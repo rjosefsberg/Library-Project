@@ -8,3 +8,5 @@ C:\Users\User\Documents\GitHub\Library-Project\LibrarySystem\LibrarySystem\bin\D
 C:\Users\User\Documents\GitHub\Library-Project\LibrarySystem\LibrarySystem\bin\Debug\LibrarySystem.pdb
 C:\Users\User\Documents\GitHub\Library-Project\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.exe
 C:\Users\User\Documents\GitHub\Library-Project\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.pdb
+C:\Users\User\Documents\GitHub\Library-Project\LibrarySystem\LibrarySystem\obj\Debug\LibrarySystem.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\Library-Project\LibrarySystem\LibrarySystem\obj\Debug\WindowsFormsApplication1.LibraryGUI.resources
