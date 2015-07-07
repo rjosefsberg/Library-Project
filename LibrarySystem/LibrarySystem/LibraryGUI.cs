@@ -48,7 +48,17 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            String sISBN = removebookbox.Text;
+            if (sISBN.Length != 13)
+            {
+                MessageBox.Show("Incorrect Length for ISBN");
+            }
+            else
+            {
+                String dbString = "Delete from books where ISBN = " + sISBN + ";";
+                DBHelper db = new DBHelper();
+                db.dbUpdate(dbString);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -112,7 +122,17 @@ namespace WindowsFormsApplication1
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            String sISBN = checkinbox.Text;
+            if (sISBN.Length != 13)
+            {
+                MessageBox.Show("Incorrect length for ISBN (13)");
+            }
+            else 
+            {
+                String dbString = "Update books SET Checked_Out = 'N', Out_Date = null, Due_Date = null, By_patron = null WHERE ISBN = "+sISBN+";";
+                DBHelper db = new DBHelper();
+                db.dbUpdate(dbString);
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)
