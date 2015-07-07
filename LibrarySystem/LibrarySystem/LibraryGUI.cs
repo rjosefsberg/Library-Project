@@ -39,10 +39,11 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-             this.Hide();
+          this.Hide();
             MessageBox.Show("Enter Book Information");
-            //Form2 f2 = new Form2 (); 
-            //f2.ShowDialog();
+            addbookpop f2 = new addbookpop (); 
+            f2.ShowDialog();
+
 
         }
 
