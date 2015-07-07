@@ -253,5 +253,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void Checkinlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

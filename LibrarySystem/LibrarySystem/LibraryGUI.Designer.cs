@@ -36,9 +36,7 @@
             this.checkoutbutton = new System.Windows.Forms.Button();
             this.checkinbutton = new System.Windows.Forms.Button();
             this.Checkoutlabel = new System.Windows.Forms.Label();
-            this.checkoutbox = new System.Windows.Forms.MaskedTextBox();
-            this.addbooktextbox1 = new System.Windows.Forms.TextBox();
-            this.Addbooklabel = new System.Windows.Forms.Label();
+            this.checkoutboxbook = new System.Windows.Forms.MaskedTextBox();
             this.removebookbox = new System.Windows.Forms.TextBox();
             this.RemoveBooklabel = new System.Windows.Forms.Label();
             this.removebookbutton = new System.Windows.Forms.Button();
@@ -92,6 +90,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.checkoutboxpatron = new System.Windows.Forms.MaskedTextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -120,14 +120,14 @@
             // Circulation
             // 
             this.Circulation.BackColor = System.Drawing.Color.Gold;
+            this.Circulation.Controls.Add(this.textBox8);
+            this.Circulation.Controls.Add(this.checkoutboxpatron);
             this.Circulation.Controls.Add(this.Checkinlabel);
             this.Circulation.Controls.Add(this.checkinbox);
             this.Circulation.Controls.Add(this.checkoutbutton);
             this.Circulation.Controls.Add(this.checkinbutton);
             this.Circulation.Controls.Add(this.Checkoutlabel);
-            this.Circulation.Controls.Add(this.checkoutbox);
-            this.Circulation.Controls.Add(this.addbooktextbox1);
-            this.Circulation.Controls.Add(this.Addbooklabel);
+            this.Circulation.Controls.Add(this.checkoutboxbook);
             this.Circulation.Controls.Add(this.removebookbox);
             this.Circulation.Controls.Add(this.RemoveBooklabel);
             this.Circulation.Controls.Add(this.removebookbutton);
@@ -144,24 +144,25 @@
             // Checkinlabel
             // 
             this.Checkinlabel.AutoSize = true;
-            this.Checkinlabel.Location = new System.Drawing.Point(6, 202);
+            this.Checkinlabel.Location = new System.Drawing.Point(6, 119);
             this.Checkinlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Checkinlabel.Name = "Checkinlabel";
-            this.Checkinlabel.Size = new System.Drawing.Size(125, 17);
+            this.Checkinlabel.Size = new System.Drawing.Size(238, 17);
             this.Checkinlabel.TabIndex = 12;
-            this.Checkinlabel.Text = "Enter Patron ID:";
+            this.Checkinlabel.Text = "Enter Book ISBN and Patron ID:";
+            this.Checkinlabel.Click += new System.EventHandler(this.Checkinlabel_Click);
             // 
             // checkinbox
             // 
-            this.checkinbox.Location = new System.Drawing.Point(230, 199);
+            this.checkinbox.Location = new System.Drawing.Point(146, 138);
             this.checkinbox.Margin = new System.Windows.Forms.Padding(2);
             this.checkinbox.Name = "checkinbox";
-            this.checkinbox.Size = new System.Drawing.Size(174, 23);
+            this.checkinbox.Size = new System.Drawing.Size(118, 23);
             this.checkinbox.TabIndex = 11;
             // 
             // checkoutbutton
             // 
-            this.checkoutbutton.Location = new System.Drawing.Point(408, 135);
+            this.checkoutbutton.Location = new System.Drawing.Point(285, 58);
             this.checkoutbutton.Margin = new System.Windows.Forms.Padding(2);
             this.checkoutbutton.Name = "checkoutbutton";
             this.checkoutbutton.Size = new System.Drawing.Size(82, 50);
@@ -171,7 +172,7 @@
             // 
             // checkinbutton
             // 
-            this.checkinbutton.Location = new System.Drawing.Point(408, 190);
+            this.checkinbutton.Location = new System.Drawing.Point(285, 128);
             this.checkinbutton.Margin = new System.Windows.Forms.Padding(2);
             this.checkinbutton.Name = "checkinbutton";
             this.checkinbutton.Size = new System.Drawing.Size(82, 41);
@@ -183,63 +184,45 @@
             // Checkoutlabel
             // 
             this.Checkoutlabel.AutoSize = true;
-            this.Checkoutlabel.Location = new System.Drawing.Point(6, 150);
+            this.Checkoutlabel.Location = new System.Drawing.Point(8, 52);
             this.Checkoutlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Checkoutlabel.Name = "Checkoutlabel";
-            this.Checkoutlabel.Size = new System.Drawing.Size(218, 17);
+            this.Checkoutlabel.Size = new System.Drawing.Size(238, 17);
             this.Checkoutlabel.TabIndex = 7;
-            this.Checkoutlabel.Text = "Enter Book ID and Patron ID:";
+            this.Checkoutlabel.Text = "Enter Book ISBN and Patron ID:";
             // 
-            // checkoutbox
+            // checkoutboxbook
             // 
-            this.checkoutbox.Location = new System.Drawing.Point(230, 150);
-            this.checkoutbox.Margin = new System.Windows.Forms.Padding(2);
-            this.checkoutbox.Name = "checkoutbox";
-            this.checkoutbox.Size = new System.Drawing.Size(174, 23);
-            this.checkoutbox.TabIndex = 6;
-            this.checkoutbox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
-            // 
-            // addbooktextbox1
-            // 
-            this.addbooktextbox1.Location = new System.Drawing.Point(230, 27);
-            this.addbooktextbox1.Margin = new System.Windows.Forms.Padding(2);
-            this.addbooktextbox1.Name = "addbooktextbox1";
-            this.addbooktextbox1.Size = new System.Drawing.Size(174, 23);
-            this.addbooktextbox1.TabIndex = 5;
-            // 
-            // Addbooklabel
-            // 
-            this.Addbooklabel.AutoSize = true;
-            this.Addbooklabel.Location = new System.Drawing.Point(6, 34);
-            this.Addbooklabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Addbooklabel.Name = "Addbooklabel";
-            this.Addbooklabel.Size = new System.Drawing.Size(218, 17);
-            this.Addbooklabel.TabIndex = 4;
-            this.Addbooklabel.Text = "Enter Book Id, ISBN, or Title:";
+            this.checkoutboxbook.Location = new System.Drawing.Point(11, 71);
+            this.checkoutboxbook.Margin = new System.Windows.Forms.Padding(2);
+            this.checkoutboxbook.Name = "checkoutboxbook";
+            this.checkoutboxbook.Size = new System.Drawing.Size(113, 23);
+            this.checkoutboxbook.TabIndex = 6;
+            this.checkoutboxbook.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // removebookbox
             // 
-            this.removebookbox.Location = new System.Drawing.Point(231, 75);
+            this.removebookbox.Location = new System.Drawing.Point(146, 209);
             this.removebookbox.Margin = new System.Windows.Forms.Padding(2);
             this.removebookbox.Name = "removebookbox";
-            this.removebookbox.Size = new System.Drawing.Size(174, 23);
+            this.removebookbox.Size = new System.Drawing.Size(118, 23);
             this.removebookbox.TabIndex = 3;
             this.removebookbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // RemoveBooklabel
             // 
             this.RemoveBooklabel.AutoSize = true;
-            this.RemoveBooklabel.Location = new System.Drawing.Point(5, 77);
+            this.RemoveBooklabel.Location = new System.Drawing.Point(8, 212);
             this.RemoveBooklabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RemoveBooklabel.Name = "RemoveBooklabel";
-            this.RemoveBooklabel.Size = new System.Drawing.Size(218, 17);
+            this.RemoveBooklabel.Size = new System.Drawing.Size(133, 17);
             this.RemoveBooklabel.TabIndex = 2;
-            this.RemoveBooklabel.Text = "Enter Book Id, ISBN, or Title:";
+            this.RemoveBooklabel.Text = "Enter Book ISBN:";
             this.RemoveBooklabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // removebookbutton
             // 
-            this.removebookbutton.Location = new System.Drawing.Point(408, 64);
+            this.removebookbutton.Location = new System.Drawing.Point(285, 188);
             this.removebookbutton.Margin = new System.Windows.Forms.Padding(2);
             this.removebookbutton.Name = "removebookbutton";
             this.removebookbutton.Size = new System.Drawing.Size(82, 64);
@@ -250,10 +233,10 @@
             // 
             // addbookbutton
             // 
-            this.addbookbutton.Location = new System.Drawing.Point(408, 16);
+            this.addbookbutton.Location = new System.Drawing.Point(422, 96);
             this.addbookbutton.Margin = new System.Windows.Forms.Padding(2);
             this.addbookbutton.Name = "addbookbutton";
-            this.addbookbutton.Size = new System.Drawing.Size(82, 43);
+            this.addbookbutton.Size = new System.Drawing.Size(82, 90);
             this.addbookbutton.TabIndex = 0;
             this.addbookbutton.Text = "Add Book";
             this.addbookbutton.UseVisualStyleBackColor = true;
@@ -812,6 +795,22 @@
             this.textBox7.Size = new System.Drawing.Size(94, 23);
             this.textBox7.TabIndex = 17;
             // 
+            // checkoutboxpatron
+            // 
+            this.checkoutboxpatron.Location = new System.Drawing.Point(146, 71);
+            this.checkoutboxpatron.Margin = new System.Windows.Forms.Padding(2);
+            this.checkoutboxpatron.Name = "checkoutboxpatron";
+            this.checkoutboxpatron.Size = new System.Drawing.Size(118, 23);
+            this.checkoutboxpatron.TabIndex = 13;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(6, 138);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(118, 23);
+            this.textBox8.TabIndex = 14;
+            // 
             // LibraryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -859,11 +858,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label RemoveBooklabel;
         private System.Windows.Forms.TextBox removebookbox;
-        private System.Windows.Forms.TextBox addbooktextbox1;
-        private System.Windows.Forms.Label Addbooklabel;
         private System.Windows.Forms.RadioButton searchpatronbutton;
         private System.Windows.Forms.RadioButton searchbookbutton;
-        private System.Windows.Forms.MaskedTextBox checkoutbox;
+        private System.Windows.Forms.MaskedTextBox checkoutboxbook;
         private System.Windows.Forms.Button checkoutbutton;
         private System.Windows.Forms.Button checkinbutton;
         private System.Windows.Forms.Label Checkoutlabel;
@@ -913,6 +910,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.MaskedTextBox checkoutboxpatron;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
 
