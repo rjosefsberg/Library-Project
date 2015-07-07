@@ -53,6 +53,7 @@ public class DBHelper
             myCommand.Connection = connect;
             connect.Open();
             myCommand.ExecuteNonQuery();
+            connect.Close();
         }
     
         catch (Exception e)
@@ -121,8 +122,8 @@ public class DBHelper
         "Publication_date date," +
         "Shelf_ID Varchar(6) NOT NULL," +
         "Checked_Out CHAR(1) NOT NULL DEFAULT 'N'," +
-        "Out_Date Date," +
-        "Due_Date Date," +
+        "Out_Date Varchar (10)," +
+        "Due_Date Varchar (10)," +
         "By_patron int(5) NULL," +
         "PRIMARY KEY (ISBN));";
 
@@ -177,7 +178,7 @@ public class DBHelper
 
         "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
 
-        "VALUES(978146659935,'IOS Game Development','Lucka','Thomas','2013-09-04','004.12','N', null,null);"+
+        "VALUES(9781466569935,'IOS Game Development','Lucka','Thomas','2013-09-04','004.12','N', null,null);" +
 
         "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
 

@@ -41,8 +41,8 @@ namespace WindowsFormsApplication1
         {
              this.Hide();
             MessageBox.Show("Enter Book Information");
-            Form2 f2 = new Form2 (); 
-            f2.ShowDialog();
+            //Form2 f2 = new Form2 (); 
+            //f2.ShowDialog();
 
         }
 
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -257,6 +257,40 @@ namespace WindowsFormsApplication1
         private void Checkinlabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkoutbutton_Click(object sender, EventArgs e)
+        {
+            String sISBN = checkoutboxbook.Text;
+            String sPatron = checkoutboxpatron.Text;
+            if (sISBN.Length != 13)
+            {
+                MessageBox.Show("Incorrect length for ISBN (13)");
+            }
+            else if (sPatron.Length != 5)
+            {
+                MessageBox.Show("Incorrect length for Patron ID (5)");
+            }
+
+            else
+            {
+                DateTime dtToday = DateTime.Today;
+                String sOut = dtToday.ToString("yyyy-MM-dd");
+                DateTime dtDue = dtToday.AddDays(14.00);
+                String sDue = dtDue.ToString("yyyy-MM-dd");
+
+                String dbString = "UPDATE books SET Checked_Out= 'Y',Out_Date= '" + sOut + "', Due_Date= '" + sDue + "', By_patron= " + sPatron + " WHERE ISBN= " + sISBN + ";";
+
+                Console.WriteLine(dbString);
+
+                DBHelper db = new DBHelper();
+                db.dbUpdate(dbString);
+            }
+        }
+
+        private void checkoutboxpatron_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            checkoutboxpatron.MaxLength = 5;
         }
     }
 }

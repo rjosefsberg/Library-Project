@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryGUI));
             this.tabsystem = new System.Windows.Forms.TabControl();
             this.Circulation = new System.Windows.Forms.TabPage();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.checkoutboxpatron = new System.Windows.Forms.MaskedTextBox();
             this.Checkinlabel = new System.Windows.Forms.Label();
             this.checkinbox = new System.Windows.Forms.TextBox();
             this.checkoutbutton = new System.Windows.Forms.Button();
@@ -67,6 +69,12 @@
             this.removepatronbutton = new System.Windows.Forms.Button();
             this.RemovePatronBox = new System.Windows.Forms.TextBox();
             this.removePatronlabel = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.patroneditlabel = new System.Windows.Forms.Label();
             this.editaddresslabel = new System.Windows.Forms.Label();
@@ -84,14 +92,6 @@
             this.searchbookbutton = new System.Windows.Forms.RadioButton();
             this.searchpatronbutton = new System.Windows.Forms.RadioButton();
             this.searchbutton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.checkoutboxpatron = new System.Windows.Forms.MaskedTextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -141,6 +141,23 @@
             this.Circulation.Text = "Circulation";
             this.Circulation.Click += new System.EventHandler(this.Circulation_Click);
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(6, 138);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(118, 23);
+            this.textBox8.TabIndex = 14;
+            // 
+            // checkoutboxpatron
+            // 
+            this.checkoutboxpatron.Location = new System.Drawing.Point(146, 71);
+            this.checkoutboxpatron.Margin = new System.Windows.Forms.Padding(2);
+            this.checkoutboxpatron.Name = "checkoutboxpatron";
+            this.checkoutboxpatron.Size = new System.Drawing.Size(118, 23);
+            this.checkoutboxpatron.TabIndex = 13;
+            this.checkoutboxpatron.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.checkoutboxpatron_MaskInputRejected);
+            // 
             // Checkinlabel
             // 
             this.Checkinlabel.AutoSize = true;
@@ -169,6 +186,7 @@
             this.checkoutbutton.TabIndex = 10;
             this.checkoutbutton.Text = "Check Out";
             this.checkoutbutton.UseVisualStyleBackColor = true;
+            this.checkoutbutton.Click += new System.EventHandler(this.checkoutbutton_Click);
             // 
             // checkinbutton
             // 
@@ -233,7 +251,7 @@
             // 
             // addbookbutton
             // 
-            this.addbookbutton.Location = new System.Drawing.Point(422, 96);
+            this.addbookbutton.Location = new System.Drawing.Point(422, 46);
             this.addbookbutton.Margin = new System.Windows.Forms.Padding(2);
             this.addbookbutton.Name = "addbookbutton";
             this.addbookbutton.Size = new System.Drawing.Size(82, 90);
@@ -565,6 +583,63 @@
             this.removePatronlabel.TabIndex = 0;
             this.removePatronlabel.Text = "Patron ID:";
             // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(250, 73);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(94, 23);
+            this.textBox7.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(196, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "City:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(98, 110);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(46, 23);
+            this.textBox6.TabIndex = 15;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 113);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "State:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(98, 70);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(94, 23);
+            this.textBox5.TabIndex = 13;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Address:";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(66, 224);
@@ -737,79 +812,6 @@
             this.searchbutton.TabIndex = 6;
             this.searchbutton.Text = "Search";
             this.searchbutton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Address:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(98, 70);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(94, 23);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 113);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "State:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(98, 110);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(46, 23);
-            this.textBox6.TabIndex = 15;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged_1);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(196, 73);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "City:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(250, 73);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(94, 23);
-            this.textBox7.TabIndex = 17;
-            // 
-            // checkoutboxpatron
-            // 
-            this.checkoutboxpatron.Location = new System.Drawing.Point(146, 71);
-            this.checkoutboxpatron.Margin = new System.Windows.Forms.Padding(2);
-            this.checkoutboxpatron.Name = "checkoutboxpatron";
-            this.checkoutboxpatron.Size = new System.Drawing.Size(118, 23);
-            this.checkoutboxpatron.TabIndex = 13;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(6, 138);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(118, 23);
-            this.textBox8.TabIndex = 14;
             // 
             // LibraryGUI
             // 
