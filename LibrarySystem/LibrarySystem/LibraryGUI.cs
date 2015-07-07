@@ -228,5 +228,30 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void statebox_TextChanged(object sender, EventArgs e)
+        {
+            statebox.MaxLength = 2;
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged_1(object sender, EventArgs e)
+        {
+            textBox6.MaxLength = 2;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
