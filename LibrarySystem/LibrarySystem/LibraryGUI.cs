@@ -313,5 +313,17 @@ namespace WindowsFormsApplication1
         {
             checkoutboxpatron.MaxLength = 5;
         }
+    {
+        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 }
