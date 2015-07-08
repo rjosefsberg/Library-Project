@@ -367,19 +367,19 @@ namespace WindowsFormsApplication1
             {
                 switch (searchParam)
                 {
-                    case "Patron ID": dbString = "Select * from patron where patron_ID LIKE '%"+boxString+"%';" ;
+                    case "Patron ID": dbString = "Select * from patron where patron_ID LIKE '%"+boxString+"%' AND NOT Inactive;" ;
                         break;
 
-                    case "First Name": dbString = "Select * from patron where First_Name LIKE '%"+boxString+"%';" ;
+                    case "First Name": dbString = "Select * from patron where First_Name LIKE '%"+boxString+"%' AND NOT Inactive;" ;
                         break;
 
-                    case "Last Name": dbString = "Select * from patron where Last_Name LIKE '%" + boxString + "%';";
+                    case "Last Name": dbString = "Select * from patron where Last_Name LIKE '%" + boxString + "%' AND NOT Inactive;";
                         break;
 
-                    case "Phone": dbString = "Select * from patron where Telephone LIKE '%" + boxString + "%';";
+                    case "Phone": dbString = "Select * from patron where Telephone LIKE '%" + boxString + "%' AND NOT Inactive;";
                         break;
 
-                    case "Email": dbString = "Select * from patron where Email LIKE '%" + boxString + "%';";
+                    case "Email": dbString = "Select * from patron where Email LIKE '%" + boxString + "%' AND NOT Inactive;";
                         break;
                 }
             }
@@ -397,6 +397,12 @@ namespace WindowsFormsApplication1
             }
             db.dbSearch(dbString, searchResults);
      }
+
+        private void populateButton_Click(object sender, EventArgs e)
+        {
+            DBHelper db = new DBHelper();
+            db.dbPopulate();
+        }
             
                 
    }

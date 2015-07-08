@@ -10,7 +10,5 @@ public class LibrarySystem
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         Application.Run(new LibraryGUI());
-        DBHelper db = new DBHelper();
-        db.dbPopulate();      
     }
 }

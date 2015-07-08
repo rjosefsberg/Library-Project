@@ -94,6 +94,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.searchResults = new System.Windows.Forms.DataGridView();
             this.searchCombo = new System.Windows.Forms.ComboBox();
+            this.populateButton = new System.Windows.Forms.Button();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -846,12 +847,23 @@
             this.searchCombo.TabIndex = 8;
             this.searchCombo.SelectedIndexChanged += new System.EventHandler(this.searchCombo_SelectedIndexChanged);
             // 
+            // populateButton
+            // 
+            this.populateButton.Location = new System.Drawing.Point(7, 12);
+            this.populateButton.Name = "populateButton";
+            this.populateButton.Size = new System.Drawing.Size(75, 23);
+            this.populateButton.TabIndex = 4;
+            this.populateButton.Text = "Populate DB";
+            this.populateButton.UseVisualStyleBackColor = true;
+            this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
+            // 
             // LibraryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(551, 477);
+            this.Controls.Add(this.populateButton);
             this.Controls.Add(this.tabsystem);
             this.Controls.Add(this.pictureBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -947,6 +959,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox searchCombo;
         private System.Windows.Forms.DataGridView searchResults;
+        private System.Windows.Forms.Button populateButton;
     }
 }
 
