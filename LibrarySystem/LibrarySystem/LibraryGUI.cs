@@ -39,12 +39,8 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-          this.Hide();
-            MessageBox.Show("Enter Book Information");
             addbookpop f2 = new addbookpop (); 
             f2.ShowDialog();
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -74,7 +70,8 @@ namespace WindowsFormsApplication1
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-                    }
+        
+        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -313,7 +310,7 @@ namespace WindowsFormsApplication1
         {
             checkoutboxpatron.MaxLength = 5;
         }
-    {
+    
         
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -325,5 +322,7 @@ namespace WindowsFormsApplication1
 
         }
     }
-    }
 }
+
+
+
