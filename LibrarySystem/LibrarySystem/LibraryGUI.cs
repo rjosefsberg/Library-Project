@@ -41,8 +41,8 @@ namespace WindowsFormsApplication1
         {
           this.Hide();
             MessageBox.Show("Enter Book Information");
-            //addbookpop f2 = new addbookpop (); 
-            //f2.ShowDialog();
+            addbookpop f2 = new addbookpop (); 
+            f2.ShowDialog();
 
 
         }
