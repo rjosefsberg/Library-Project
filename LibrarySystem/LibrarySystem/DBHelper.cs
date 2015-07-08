@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Data;
+using System.Windows.Forms;
 
 
 public class DBHelper
@@ -25,7 +26,7 @@ public class DBHelper
     public void setCMD(String s)    {cmd = s;}
 
 
-    public void dbSearch(String s)//will retrieve whatever table entries you request, but youll need to bind
+    public void dbSearch(String s, DataGridView d)//will retrieve whatever table entries you request, but youll need to bind
     {                             //then using BindingSource to a datagridview in the GUI.
         try
         {
@@ -37,6 +38,9 @@ public class DBHelper
             adp.SelectCommand = myCommand;
             DataTable dataset = new DataTable();
             adp.Fill(dataset);
+            d.DataSource = dataset;
+            connect.Close();
+            
                       
         }
         catch (Exception e)

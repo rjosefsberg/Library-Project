@@ -88,9 +88,12 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.searchbookbutton = new System.Windows.Forms.RadioButton();
-            this.searchpatronbutton = new System.Windows.Forms.RadioButton();
+            this.searchbookradio = new System.Windows.Forms.RadioButton();
+            this.searchpatronradio = new System.Windows.Forms.RadioButton();
             this.searchbutton = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchResults = new System.Windows.Forms.DataGridView();
+            this.searchCombo = new System.Windows.Forms.ComboBox();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -102,12 +105,15 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
             this.SuspendLayout();
             // 
             // tabsystem
             // 
             this.tabsystem.Controls.Add(this.Circulation);
             this.tabsystem.Controls.Add(this.Patron);
+            this.tabsystem.Controls.Add(this.tabPage1);
             this.tabsystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabsystem.Location = new System.Drawing.Point(3, 143);
             this.tabsystem.Margin = new System.Windows.Forms.Padding(2);
@@ -750,10 +756,10 @@
             // 
             // SearchBox
             // 
-            this.SearchBox.Location = new System.Drawing.Point(466, 5);
+            this.SearchBox.Location = new System.Drawing.Point(155, 34);
             this.SearchBox.Margin = new System.Windows.Forms.Padding(2);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(73, 20);
+            this.SearchBox.Size = new System.Drawing.Size(288, 23);
             this.SearchBox.TabIndex = 1;
             // 
             // pictureBox2
@@ -768,40 +774,77 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // searchbookbutton
+            // searchbookradio
             // 
-            this.searchbookbutton.AutoSize = true;
-            this.searchbookbutton.Checked = true;
-            this.searchbookbutton.Location = new System.Drawing.Point(461, 28);
-            this.searchbookbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.searchbookbutton.Name = "searchbookbutton";
-            this.searchbookbutton.Size = new System.Drawing.Size(50, 17);
-            this.searchbookbutton.TabIndex = 4;
-            this.searchbookbutton.TabStop = true;
-            this.searchbookbutton.Text = "Book";
-            this.searchbookbutton.UseVisualStyleBackColor = true;
+            this.searchbookradio.AutoSize = true;
+            this.searchbookradio.Location = new System.Drawing.Point(21, 5);
+            this.searchbookradio.Margin = new System.Windows.Forms.Padding(2);
+            this.searchbookradio.Name = "searchbookradio";
+            this.searchbookradio.Size = new System.Drawing.Size(62, 21);
+            this.searchbookradio.TabIndex = 4;
+            this.searchbookradio.Text = "Book";
+            this.searchbookradio.UseVisualStyleBackColor = true;
+            this.searchbookradio.CheckedChanged += new System.EventHandler(this.searchbookradio_CheckedChanged);
             // 
-            // searchpatronbutton
+            // searchpatronradio
             // 
-            this.searchpatronbutton.AutoSize = true;
-            this.searchpatronbutton.Location = new System.Drawing.Point(461, 51);
-            this.searchpatronbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.searchpatronbutton.Name = "searchpatronbutton";
-            this.searchpatronbutton.Size = new System.Drawing.Size(56, 17);
-            this.searchpatronbutton.TabIndex = 5;
-            this.searchpatronbutton.Text = "Patron";
-            this.searchpatronbutton.UseVisualStyleBackColor = true;
-            this.searchpatronbutton.CheckedChanged += new System.EventHandler(this.searchpatronbutton_CheckedChanged);
+            this.searchpatronradio.AutoSize = true;
+            this.searchpatronradio.Location = new System.Drawing.Point(99, 5);
+            this.searchpatronradio.Margin = new System.Windows.Forms.Padding(2);
+            this.searchpatronradio.Name = "searchpatronradio";
+            this.searchpatronradio.Size = new System.Drawing.Size(74, 21);
+            this.searchpatronradio.TabIndex = 5;
+            this.searchpatronradio.Text = "Patron";
+            this.searchpatronradio.UseVisualStyleBackColor = true;
+            this.searchpatronradio.CheckedChanged += new System.EventHandler(this.searchpatronbutton_CheckedChanged);
             // 
             // searchbutton
             // 
-            this.searchbutton.Location = new System.Drawing.Point(406, 5);
+            this.searchbutton.Location = new System.Drawing.Point(447, 33);
             this.searchbutton.Margin = new System.Windows.Forms.Padding(2);
             this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(56, 19);
+            this.searchbutton.Size = new System.Drawing.Size(74, 26);
             this.searchbutton.TabIndex = 6;
             this.searchbutton.Text = "Search";
             this.searchbutton.UseVisualStyleBackColor = true;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Gold;
+            this.tabPage1.Controls.Add(this.searchCombo);
+            this.tabPage1.Controls.Add(this.searchResults);
+            this.tabPage1.Controls.Add(this.searchbutton);
+            this.tabPage1.Controls.Add(this.SearchBox);
+            this.tabPage1.Controls.Add(this.searchpatronradio);
+            this.tabPage1.Controls.Add(this.searchbookradio);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(537, 303);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Search";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click_1);
+            // 
+            // searchResults
+            // 
+            this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Location = new System.Drawing.Point(21, 83);
+            this.searchResults.Name = "searchResults";
+            this.searchResults.Size = new System.Drawing.Size(496, 213);
+            this.searchResults.TabIndex = 7;
+            // 
+            // searchCombo
+            // 
+            this.searchCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchCombo.FormattingEnabled = true;
+            this.searchCombo.Location = new System.Drawing.Point(21, 32);
+            this.searchCombo.Name = "searchCombo";
+            this.searchCombo.Size = new System.Drawing.Size(129, 25);
+            this.searchCombo.TabIndex = 8;
+            this.searchCombo.SelectedIndexChanged += new System.EventHandler(this.searchCombo_SelectedIndexChanged);
             // 
             // LibraryGUI
             // 
@@ -809,10 +852,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(551, 477);
-            this.Controls.Add(this.searchbutton);
-            this.Controls.Add(this.searchpatronbutton);
-            this.Controls.Add(this.searchbookbutton);
-            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.tabsystem);
             this.Controls.Add(this.pictureBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -834,8 +873,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -850,8 +891,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label RemoveBooklabel;
         private System.Windows.Forms.TextBox removebookbox;
-        private System.Windows.Forms.RadioButton searchpatronbutton;
-        private System.Windows.Forms.RadioButton searchbookbutton;
+        private System.Windows.Forms.RadioButton searchpatronradio;
+        private System.Windows.Forms.RadioButton searchbookradio;
         private System.Windows.Forms.MaskedTextBox checkoutboxbook;
         private System.Windows.Forms.Button checkoutbutton;
         private System.Windows.Forms.Button checkinbutton;
@@ -903,6 +944,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.MaskedTextBox checkoutboxpatron;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ComboBox searchCombo;
+        private System.Windows.Forms.DataGridView searchResults;
     }
 }
 

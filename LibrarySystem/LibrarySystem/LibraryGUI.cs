@@ -244,7 +244,25 @@ namespace WindowsFormsApplication1
 
         private void searchpatronbutton_CheckedChanged(object sender, EventArgs e)
         {
-
+            searchCombo.Items.Clear();
+            Boolean check = false;
+            if (searchpatronradio.Checked && check == false)
+            {
+                searchCombo.Items.Add("Patron ID");
+                searchCombo.Items.Add("First Name");
+                searchCombo.Items.Add("Last Name");
+                searchCombo.Items.Add("Phone");
+                searchCombo.Items.Add("Email");
+            }
+            else 
+            {
+                searchCombo.Items.Add("Title");
+                searchCombo.Items.Add("Author First");
+                searchCombo.Items.Add("Author Last");
+                searchCombo.Items.Add("ISBN");
+                searchCombo.Items.Add("Shelf");
+            }
+            
         }
 
         private void statebox_TextChanged(object sender, EventArgs e)
@@ -321,8 +339,69 @@ namespace WindowsFormsApplication1
         {
 
         }
-    }
+
+        private void searchCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchbookradio_CheckedChanged(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void tabPage1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void searchbutton_Click(object sender, EventArgs e)
+        {
+            String searchParam = searchCombo.SelectedItem.ToString();
+            String boxString = SearchBox.Text;
+            String dbString = null;
+            DBHelper db = new DBHelper();
+
+            if (searchpatronradio.Checked)
+            {
+                switch (searchParam)
+                {
+                    case "Patron ID": dbString = "Select * from patron where patron_ID LIKE '%"+boxString+"%';" ;
+                        break;
+
+                    case "First Name": dbString = "Select * from patron where First_Name LIKE '%"+boxString+"%';" ;
+                        break;
+
+                    case "Last Name": dbString = "Select * from patron where Last_Name LIKE '%" + boxString + "%';";
+                        break;
+
+                    case "Phone": dbString = "Select * from patron where Telephone LIKE '%" + boxString + "%';";
+                        break;
+
+                    case "Email": dbString = "Select * from patron where Email LIKE '%" + boxString + "%';";
+                        break;
+                }
+            }
+            
+            if (searchbookradio.Checked)
+            {
+                switch (searchParam)
+                {
+                    case "Title": dbString = "Select * from books where Title LIKE '%" + boxString + "%';"; break;
+                    case "Author First": dbString = "Select * from books where Author_Firstname LIKE '%" + boxString + "%';"; break;
+                    case "Author Last": dbString = "Select * from books where Author_Lastname LIKE '%" + boxString + "%';"; break;
+                    case "ISBN": dbString = "Select * from books where ISBN LIKE '%" + boxString + "%';"; break;
+                    case "Shelf": dbString = "Select * from books where Shelf_ID LIKE '%" + boxString + "%';"; break;
+                }
+            }
+            db.dbSearch(dbString, searchResults);
+     }
+            
+                
+   }
 }
+
 
 
 
