@@ -11,7 +11,7 @@ public class DBHelper
     private String cmd; 
     public DBHelper()
     { 
-        cs = "Server = localhost; Database=libdb;Uid = root;password=root";// for now just assume this'll work. That,                                                                    or download MySQL workbench and make a                                                                      simple DB yourself
+        cs = "Server = localhost; Database=libdb;Uid = root;password=root";             
     }                                                                      
 
     public DBHelper(String s)
@@ -26,8 +26,8 @@ public class DBHelper
     public void setCMD(String s)    {cmd = s;}
 
 
-    public void dbSearch(String s, DataGridView d)//will retrieve whatever table entries you                                                        request, but youll need to bind
-    {                             //then using BindingSource to a datagridview in the GUI.
+    public void dbSearch(String s, DataGridView d)                                              
+    {                             
         try
         {
             MySqlConnection connect = new MySqlConnection(getCS());
@@ -39,13 +39,13 @@ public class DBHelper
             DataTable dataset = new DataTable();
             adp.Fill(dataset);
             d.DataSource = dataset;
-            d.Columns.Remove("Inactive");
             connect.Close();
             
                       
         }
         catch (Exception e)
         {
+            MessageBox.Show("There was an error");
             Console.WriteLine(e.ToString());
         }
     }
@@ -63,6 +63,7 @@ public class DBHelper
     
         catch (Exception e)
         {
+            MessageBox.Show("There was an error");
             Console.WriteLine(e.ToString());
         }
     }

@@ -56,6 +56,8 @@ namespace WindowsFormsApplication1
                 String dbString = "Delete from books where ISBN = " + sISBN + ";";
                 DBHelper db = new DBHelper();
                 db.dbUpdate(dbString);
+                MessageBox.Show("Book removed from database.");
+                removebookbox.Text = String.Empty;
             }
         }
 
@@ -96,7 +98,7 @@ namespace WindowsFormsApplication1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            removebookbox.MaxLength = 13;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -131,6 +133,8 @@ namespace WindowsFormsApplication1
                 String dbString = "Update books SET Checked_Out = 'N', Out_Date = null, Due_Date = null, By_patron = null WHERE ISBN = " + sISBN + ";";
                 DBHelper db = new DBHelper();
                 db.dbUpdate(dbString);
+                MessageBox.Show("Check in successful.");
+                checkinbox.Text = String.Empty;
             }
         }
 
@@ -318,10 +322,11 @@ namespace WindowsFormsApplication1
 
                 String dbString = "UPDATE books SET Checked_Out= 'Y',Out_Date= '" + sOut + "', Due_Date= '" + sDue + "', By_patron= " + sPatron + " WHERE ISBN= " + sISBN + ";";
 
-                Console.WriteLine(dbString);
-
                 DBHelper db = new DBHelper();
+                MessageBox.Show("Check out successfull.");
                 db.dbUpdate(dbString);
+                checkoutboxpatron.Text = String.Empty;
+                checkoutboxbook.Text = String.Empty;
             }
         }
 
@@ -349,11 +354,6 @@ namespace WindowsFormsApplication1
         private void searchbookradio_CheckedChanged(object sender, EventArgs e)
         {
 
-
-        }
-
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
 
         }
 
@@ -433,10 +433,18 @@ namespace WindowsFormsApplication1
                 newID = "1000" + intCount;
 
 
-            String addPatron = "INSERT INTO patron (Patron_ID, Last_Name, First_Name, Email, Telephone, Address, City, State, Inactive) values ('" + newID + "','" + this.lastnamebox.Text + "','" + this.firstnamebox.Text + "','" + this.emailbox.Text + "','" + this.addressbox.Text + "','" + citybox.Text + "','" + this.statebox.Text + "','" + this.phonebox.Text + "', FALSE);";
+            String addPatron = "INSERT INTO patron (Patron_ID, Last_Name, First_Name, Email, Telephone, Address, City, State, Inactive) values ('" + newID + "','" + this.lastnamebox.Text + "','" + this.firstnamebox.Text + "','" + this.emailbox.Text + "','" + this.phonebox.Text + "','" + addressbox.Text + "','" + this.citybox.Text + "','" + this.statebox.Text + "', FALSE);";
 
 
             db.dbUpdate(addPatron);
+            MessageBox.Show("Entry created. New Patron ID:" + newID);
+            this.lastnamebox.Text = String.Empty;
+            this.firstnamebox.Text = String.Empty;
+            this.emailbox.Text = String.Empty;
+            this.phonebox.Text = String.Empty;
+            this.addressbox.Text = String.Empty;
+            this.citybox.Text = String.Empty;
+            this.statebox.Text = String.Empty;
             myConnection.Close();
         }
 
@@ -453,6 +461,7 @@ namespace WindowsFormsApplication1
             {
                 String dbString = "UPDATE patron SET Inactive = TRUE where Patron_ID = " + sPatron_ID + ";";
                 db.dbUpdate(dbString);
+                MessageBox.Show("Patron "+sPatron_ID+" set to Inactive");
             }
         }
 
@@ -461,11 +470,7 @@ namespace WindowsFormsApplication1
             DBHelper db = new DBHelper();
             String Query = "Update patron SET Last_Name = '" + this.editlnamebox.Text + "',First_Name = '" + this.editfnamebox.Text + "',Email = '" + this.editemailbox.Text + "',Address = '" + this.editaddressbox.Text + "',City = '" + editcitybox.Text + "',State = '" + this.editstatebox.Text + "',Telephone = '" + this.editphonebox.Text + "' WHERE patron_ID = '" + editpatronbox.Text + "';";
             db.dbUpdate(Query);
-
-        }
-
-        private void editnamelabel_Click(object sender, EventArgs e)
-        {
+            MessageBox.Show("Update for patron " + editpatronbox.Text + " updated.");
 
         }
 
@@ -509,9 +514,15 @@ namespace WindowsFormsApplication1
             {
                 String dbString = "UPDATE patron SET Inactive = FALSE where Patron_ID = " + sPatron_ID + ";";
                 db.dbUpdate(dbString);
+                MessageBox.Show("Patron " + sPatron_ID + " status set to Active.");
             }
 
 
+        }
+
+        private void checkinbox_TextChanged(object sender, EventArgs e)
+        {
+            checkinbox.MaxLength = 13;
         }
     }
 }
