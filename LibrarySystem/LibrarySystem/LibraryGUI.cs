@@ -253,6 +253,15 @@ namespace WindowsFormsApplication1
             DBHelper db = new DBHelper();
             String Query = "Update patron SET Last_Name = '" + this.editlnamebox.Text + "',First_Name = '" + this.editfnamebox.Text + "',Email = '" + this.editemailbox.Text + "',Address = '" + this.editaddressbox.Text + "',City = '" + editcitybox.Text + "',State = '" + this.editstatebox.Text + "',Telephone = '" + this.editphonebox.Text + "' WHERE patron_ID = '" + editpatronbox.Text + "';";
             db.dbUpdate(Query);
+            this.editlnamebox.Text = String.Empty;
+            this.editfnamebox.Text = String.Empty;
+            this.editemailbox.Text = String.Empty;
+            this.editphonebox.Text = String.Empty;
+            this.editaddressbox.Text = String.Empty;
+            this.editcitybox.Text = String.Empty;
+            this.editstatebox.Text = String.Empty;
+            this.editpatronbox.Text = String.Empty;
+
             MessageBox.Show("Update for patron " + editpatronbox.Text + " updated.");
 
         }
