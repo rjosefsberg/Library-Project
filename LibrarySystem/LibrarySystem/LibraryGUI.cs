@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            addbookpop f2 = new addbookpop (); 
+            addbookpop f2 = new addbookpop();
             f2.ShowDialog();
         }
 
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication1
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-        
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -116,7 +116,7 @@ namespace WindowsFormsApplication1
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-           
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -126,9 +126,9 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Incorrect length for ISBN (13)");
             }
-            else 
+            else
             {
-                String dbString = "Update books SET Checked_Out = 'N', Out_Date = null, Due_Date = null, By_patron = null WHERE ISBN = "+sISBN+";";
+                String dbString = "Update books SET Checked_Out = 'N', Out_Date = null, Due_Date = null, By_patron = null WHERE ISBN = " + sISBN + ";";
                 DBHelper db = new DBHelper();
                 db.dbUpdate(dbString);
             }
@@ -146,7 +146,7 @@ namespace WindowsFormsApplication1
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-                    }
+        }
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -255,7 +255,7 @@ namespace WindowsFormsApplication1
                 searchCombo.Items.Add("Phone");
                 searchCombo.Items.Add("Email");
             }
-            else 
+            else
             {
                 searchCombo.Items.Add("Title");
                 searchCombo.Items.Add("Author First");
@@ -263,7 +263,7 @@ namespace WindowsFormsApplication1
                 searchCombo.Items.Add("ISBN");
                 searchCombo.Items.Add("Shelf");
             }
-            
+
         }
 
         private void statebox_TextChanged(object sender, EventArgs e)
@@ -278,7 +278,7 @@ namespace WindowsFormsApplication1
 
         private void textBox6_TextChanged_1(object sender, EventArgs e)
         {
-            textBox6.MaxLength = 2;
+            editstatebox.MaxLength = 2;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -329,8 +329,8 @@ namespace WindowsFormsApplication1
         {
             checkoutboxpatron.MaxLength = 5;
         }
-    
-        
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -349,12 +349,12 @@ namespace WindowsFormsApplication1
         private void searchbookradio_CheckedChanged(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void tabPage1_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void searchbutton_Click(object sender, EventArgs e)
@@ -368,10 +368,10 @@ namespace WindowsFormsApplication1
             {
                 switch (searchParam)
                 {
-                    case "Patron ID": dbString = "Select * from patron where patron_ID LIKE '%"+boxString+"%' AND NOT Inactive;" ;
+                    case "Patron ID": dbString = "Select * from patron where patron_ID LIKE '%" + boxString + "%' AND NOT Inactive;";
                         break;
 
-                    case "First Name": dbString = "Select * from patron where First_Name LIKE '%"+boxString+"%' AND NOT Inactive;" ;
+                    case "First Name": dbString = "Select * from patron where First_Name LIKE '%" + boxString + "%' AND NOT Inactive;";
                         break;
 
                     case "Last Name": dbString = "Select * from patron where Last_Name LIKE '%" + boxString + "%' AND NOT Inactive;";
@@ -384,7 +384,7 @@ namespace WindowsFormsApplication1
                         break;
                 }
             }
-            
+
             if (searchbookradio.Checked)
             {
                 switch (searchParam)
@@ -397,7 +397,7 @@ namespace WindowsFormsApplication1
                 }
             }
             db.dbSearch(dbString, searchResults);
-     }
+        }
 
         private void populateButton_Click(object sender, EventArgs e)
         {
@@ -432,10 +432,10 @@ namespace WindowsFormsApplication1
             else
                 newID = "1000" + intCount;
 
-            
-            String addPatron = "INSERT INTO patron (Patron_ID, Last_Name, First_Name, Email, Telephone, Address, City, State, Inactive) values ('"+newID+"','" + this.lastnamebox.Text + "','" + this.firstnamebox.Text + "','" + this.emailbox.Text + "','" + this.addressbox.Text + "','" + citybox.Text + "','" + this.statebox.Text + "','" + this.phonebox.Text + "', FALSE);";
 
-            
+            String addPatron = "INSERT INTO patron (Patron_ID, Last_Name, First_Name, Email, Telephone, Address, City, State, Inactive) values ('" + newID + "','" + this.lastnamebox.Text + "','" + this.firstnamebox.Text + "','" + this.emailbox.Text + "','" + this.addressbox.Text + "','" + citybox.Text + "','" + this.statebox.Text + "','" + this.phonebox.Text + "', FALSE);";
+
+
             db.dbUpdate(addPatron);
             myConnection.Close();
         }
@@ -459,31 +459,61 @@ namespace WindowsFormsApplication1
         private void button2_Click_1(object sender, EventArgs e)
         {
             DBHelper db = new DBHelper();
-            String conString = "datasource = localhost";
-            String Query = "Update patron SET Last_Name = '" + this.textBox2.Text + "',First_Name = '" + this.textBox8.Text + "',Email = '" + this.textBox4.Text + "',Address = '" + this.textBox5.Text + "',City = '" + textBox7.Text + "',State = '" + this.textBox6.Text + "',Telephone = '" + this.textBox3.Text + "' WHERE patron_ID = '" + textBox1.Text + "';";
+            String Query = "Update patron SET Last_Name = '" + this.editlnamebox.Text + "',First_Name = '" + this.editfnamebox.Text + "',Email = '" + this.editemailbox.Text + "',Address = '" + this.editaddressbox.Text + "',City = '" + editcitybox.Text + "',State = '" + this.editstatebox.Text + "',Telephone = '" + this.editphonebox.Text + "' WHERE patron_ID = '" + editpatronbox.Text + "';";
             db.dbUpdate(Query);
-            //MySqlConnection myConnection = new MySqlConnection(conString);
-            //MySqlCommand myCommand = new MySqlCommand(Query, myConnection);
-            //MySqlDataReader myReader;
 
-            /*try
+        }
+
+        private void editnamelabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reactivatePatron_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            String patronID = editpatronbox.Text;
+            DBHelper db = new DBHelper();
+            MySqlDataReader myReader = null;
+            MySqlConnection myConnection = new MySqlConnection("Server = localhost; Database=libdb;Uid = root;password=root");
+            MySqlCommand myCommand = new MySqlCommand("select * from patron where Patron_ID =" + patronID + "", myConnection);
+            myConnection.Open();
+            myReader = myCommand.ExecuteReader();
+
+            while (myReader.Read())
             {
-                myConnection.Open();
-                myReader = myCommand.ExecuteReader();
-                while (myReader.Read()) ;
-                {
+                editlnamebox.Text = myReader[1].ToString();
+                editfnamebox.Text = myReader[2].ToString();
+                editemailbox.Text = myReader[3].ToString();
+                editphonebox.Text = myReader[4].ToString();
+                editaddressbox.Text = myReader[5].ToString();
+                editcitybox.Text = myReader[6].ToString();
+                editstatebox.Text = myReader[7].ToString();
+            }
+        }
 
-                }
+        private void reactivatePatron_Click_1(object sender, EventArgs e)
+        {
+            DBHelper db = new DBHelper();
+            String sPatron_ID = RemovePatronBox.Text;
+            if (sPatron_ID.Length != 5)
+            {
+                MessageBox.Show("Incorrect Length for Patron ID");
             }
 
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.ToString());
-            }*/
+                String dbString = "UPDATE patron SET Inactive = FALSE where Patron_ID = " + sPatron_ID + ";";
+                db.dbUpdate(dbString);
+            }
+
+
         }
-            
-                
-   }
+    }
 }
 
 

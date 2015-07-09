@@ -31,17 +31,17 @@ namespace WindowsFormsApplication1
             this.addbookinfo = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Pubdate = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.authorfirst = new System.Windows.Forms.TextBox();
-            this.authorlast = new System.Windows.Forms.TextBox();
+            this.pubdatebox = new System.Windows.Forms.TextBox();
+            this.addbookshelfidbox = new System.Windows.Forms.TextBox();
+            this.addbookauthorfirst = new System.Windows.Forms.TextBox();
+            this.addbookauthorlast = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveandExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.addbookisbnbox = new System.Windows.Forms.TextBox();
+            this.addbooktitlebox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.addbookinfo.SuspendLayout();
             this.SuspendLayout();
@@ -49,15 +49,15 @@ namespace WindowsFormsApplication1
             // addbookinfo
             // 
             this.addbookinfo.Controls.Add(this.label7);
-            this.addbookinfo.Controls.Add(this.textBox2);
-            this.addbookinfo.Controls.Add(this.textBox1);
+            this.addbookinfo.Controls.Add(this.addbooktitlebox);
+            this.addbookinfo.Controls.Add(this.addbookisbnbox);
             this.addbookinfo.Controls.Add(this.label4);
             this.addbookinfo.Controls.Add(this.label6);
             this.addbookinfo.Controls.Add(this.label5);
-            this.addbookinfo.Controls.Add(this.Pubdate);
-            this.addbookinfo.Controls.Add(this.textBox5);
-            this.addbookinfo.Controls.Add(this.authorfirst);
-            this.addbookinfo.Controls.Add(this.authorlast);
+            this.addbookinfo.Controls.Add(this.pubdatebox);
+            this.addbookinfo.Controls.Add(this.addbookshelfidbox);
+            this.addbookinfo.Controls.Add(this.addbookauthorfirst);
+            this.addbookinfo.Controls.Add(this.addbookauthorlast);
             this.addbookinfo.Controls.Add(this.label3);
             this.addbookinfo.Controls.Add(this.label2);
             this.addbookinfo.Controls.Add(this.label1);
@@ -93,37 +93,37 @@ namespace WindowsFormsApplication1
             this.label5.TabIndex = 11;
             this.label5.Text = "Last";
             // 
-            // Pubdate
+            // pubdatebox
             // 
-            this.Pubdate.Location = new System.Drawing.Point(115, 172);
-            this.Pubdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Pubdate.Name = "Pubdate";
-            this.Pubdate.Size = new System.Drawing.Size(117, 23);
-            this.Pubdate.TabIndex = 10;
+            this.pubdatebox.Location = new System.Drawing.Point(115, 172);
+            this.pubdatebox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pubdatebox.Name = "pubdatebox";
+            this.pubdatebox.Size = new System.Drawing.Size(117, 23);
+            this.pubdatebox.TabIndex = 10;
             // 
-            // textBox5
+            // addbookshelfidbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(115, 234);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(117, 23);
-            this.textBox5.TabIndex = 9;
+            this.addbookshelfidbox.Location = new System.Drawing.Point(115, 234);
+            this.addbookshelfidbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addbookshelfidbox.Name = "addbookshelfidbox";
+            this.addbookshelfidbox.Size = new System.Drawing.Size(117, 23);
+            this.addbookshelfidbox.TabIndex = 9;
             // 
-            // authorfirst
+            // addbookauthorfirst
             // 
-            this.authorfirst.Location = new System.Drawing.Point(247, 120);
-            this.authorfirst.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.authorfirst.Name = "authorfirst";
-            this.authorfirst.Size = new System.Drawing.Size(116, 23);
-            this.authorfirst.TabIndex = 7;
+            this.addbookauthorfirst.Location = new System.Drawing.Point(247, 120);
+            this.addbookauthorfirst.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addbookauthorfirst.Name = "addbookauthorfirst";
+            this.addbookauthorfirst.Size = new System.Drawing.Size(116, 23);
+            this.addbookauthorfirst.TabIndex = 7;
             // 
-            // authorlast
+            // addbookauthorlast
             // 
-            this.authorlast.Location = new System.Drawing.Point(115, 120);
-            this.authorlast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.authorlast.Name = "authorlast";
-            this.authorlast.Size = new System.Drawing.Size(117, 23);
-            this.authorlast.TabIndex = 5;
+            this.addbookauthorlast.Location = new System.Drawing.Point(115, 120);
+            this.addbookauthorlast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addbookauthorlast.Name = "addbookauthorlast";
+            this.addbookauthorlast.Size = new System.Drawing.Size(117, 23);
+            this.addbookauthorlast.TabIndex = 5;
             // 
             // label3
             // 
@@ -177,19 +177,20 @@ namespace WindowsFormsApplication1
             this.label4.TabIndex = 13;
             this.label4.Text = "ISBN:";
             // 
-            // textBox1
+            // addbookisbnbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 23);
-            this.textBox1.TabIndex = 14;
+            this.addbookisbnbox.Location = new System.Drawing.Point(115, 69);
+            this.addbookisbnbox.Name = "addbookisbnbox";
+            this.addbookisbnbox.Size = new System.Drawing.Size(191, 23);
+            this.addbookisbnbox.TabIndex = 14;
+            this.addbookisbnbox.TextChanged += new System.EventHandler(this.addbookisbnbox_TextChanged);
             // 
-            // textBox2
+            // addbooktitlebox
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 23);
-            this.textBox2.TabIndex = 15;
+            this.addbooktitlebox.Location = new System.Drawing.Point(115, 34);
+            this.addbooktitlebox.Name = "addbooktitlebox";
+            this.addbooktitlebox.Size = new System.Drawing.Size(191, 23);
+            this.addbooktitlebox.TabIndex = 15;
             // 
             // label7
             // 
@@ -223,15 +224,15 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SaveandExit;
-        private System.Windows.Forms.TextBox Pubdate;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox authorfirst;
-        private System.Windows.Forms.TextBox authorlast;
+        private System.Windows.Forms.TextBox pubdatebox;
+        private System.Windows.Forms.TextBox addbookshelfidbox;
+        private System.Windows.Forms.TextBox addbookauthorfirst;
+        private System.Windows.Forms.TextBox addbookauthorlast;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox addbooktitlebox;
+        private System.Windows.Forms.TextBox addbookisbnbox;
         private System.Windows.Forms.Label label4;
     }
 }

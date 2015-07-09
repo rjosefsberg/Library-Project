@@ -68,23 +68,21 @@
             this.removepatronbutton = new System.Windows.Forms.Button();
             this.RemovePatronBox = new System.Windows.Forms.TextBox();
             this.removePatronlabel = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.editcitybox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.editstatebox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.editaddressbox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.patroneditlabel = new System.Windows.Forms.Label();
             this.editaddresslabel = new System.Windows.Forms.Label();
-            this.editidlabel = new System.Windows.Forms.Label();
+            this.editphonelabel = new System.Windows.Forms.Label();
             this.editnamelabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.editpatronbox = new System.Windows.Forms.TextBox();
+            this.editfnamebox = new System.Windows.Forms.TextBox();
+            this.editphonebox = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -96,7 +94,11 @@
             this.searchCombo = new System.Windows.Forms.ComboBox();
             this.populateButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.editemailbox = new System.Windows.Forms.TextBox();
+            this.reactivatePatron = new System.Windows.Forms.Button();
+            this.findpatroninfobutton = new System.Windows.Forms.Button();
+            this.lnameeditlabel = new System.Windows.Forms.Label();
+            this.editlnamebox = new System.Windows.Forms.TextBox();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -524,6 +526,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.AccessibleName = "removepatronTab";
+            this.splitContainer1.Panel1.Controls.Add(this.reactivatePatron);
             this.splitContainer1.Panel1.Controls.Add(this.removepatronbutton);
             this.splitContainer1.Panel1.Controls.Add(this.RemovePatronBox);
             this.splitContainer1.Panel1.Controls.Add(this.removePatronlabel);
@@ -532,25 +535,26 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AccessibleName = "editInfo";
-            this.splitContainer1.Panel2.Controls.Add(this.textBox8);
+            this.splitContainer1.Panel2.Controls.Add(this.editlnamebox);
+            this.splitContainer1.Panel2.Controls.Add(this.lnameeditlabel);
+            this.splitContainer1.Panel2.Controls.Add(this.findpatroninfobutton);
+            this.splitContainer1.Panel2.Controls.Add(this.editemailbox);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox7);
+            this.splitContainer1.Panel2.Controls.Add(this.editcitybox);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox6);
+            this.splitContainer1.Panel2.Controls.Add(this.editstatebox);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox5);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.editaddressbox);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.patroneditlabel);
             this.splitContainer1.Panel2.Controls.Add(this.editaddresslabel);
-            this.splitContainer1.Panel2.Controls.Add(this.editidlabel);
+            this.splitContainer1.Panel2.Controls.Add(this.editphonelabel);
             this.splitContainer1.Panel2.Controls.Add(this.editnamelabel);
             this.splitContainer1.Panel2.Controls.Add(this.label16);
             this.splitContainer1.Panel2.Controls.Add(this.label15);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.editpatronbox);
+            this.splitContainer1.Panel2.Controls.Add(this.editfnamebox);
+            this.splitContainer1.Panel2.Controls.Add(this.editphonebox);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(530, 273);
             this.splitContainer1.SplitterDistance = 126;
@@ -559,10 +563,10 @@
             // 
             // removepatronbutton
             // 
-            this.removepatronbutton.Location = new System.Drawing.Point(16, 91);
+            this.removepatronbutton.Location = new System.Drawing.Point(2, 91);
             this.removepatronbutton.Margin = new System.Windows.Forms.Padding(2);
             this.removepatronbutton.Name = "removepatronbutton";
-            this.removepatronbutton.Size = new System.Drawing.Size(80, 42);
+            this.removepatronbutton.Size = new System.Drawing.Size(122, 55);
             this.removepatronbutton.TabIndex = 2;
             this.removepatronbutton.Text = "Remove Patron";
             this.removepatronbutton.UseVisualStyleBackColor = true;
@@ -570,7 +574,7 @@
             // 
             // RemovePatronBox
             // 
-            this.RemovePatronBox.Location = new System.Drawing.Point(16, 64);
+            this.RemovePatronBox.Location = new System.Drawing.Point(24, 64);
             this.RemovePatronBox.Margin = new System.Windows.Forms.Padding(2);
             this.RemovePatronBox.Name = "RemovePatronBox";
             this.RemovePatronBox.Size = new System.Drawing.Size(80, 23);
@@ -579,25 +583,25 @@
             // removePatronlabel
             // 
             this.removePatronlabel.AutoSize = true;
-            this.removePatronlabel.Location = new System.Drawing.Point(18, 41);
+            this.removePatronlabel.Location = new System.Drawing.Point(25, 41);
             this.removePatronlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.removePatronlabel.Name = "removePatronlabel";
             this.removePatronlabel.Size = new System.Drawing.Size(81, 17);
             this.removePatronlabel.TabIndex = 0;
             this.removePatronlabel.Text = "Patron ID:";
             // 
-            // textBox7
+            // editcitybox
             // 
-            this.textBox7.Location = new System.Drawing.Point(250, 73);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(126, 23);
-            this.textBox7.TabIndex = 17;
+            this.editcitybox.Location = new System.Drawing.Point(252, 195);
+            this.editcitybox.Margin = new System.Windows.Forms.Padding(2);
+            this.editcitybox.Name = "editcitybox";
+            this.editcitybox.Size = new System.Drawing.Size(126, 23);
+            this.editcitybox.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(196, 73);
+            this.label3.Location = new System.Drawing.Point(208, 197);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 17);
@@ -605,18 +609,18 @@
             this.label3.Text = "City:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox6
+            // editstatebox
             // 
-            this.textBox6.Location = new System.Drawing.Point(98, 110);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(46, 23);
-            this.textBox6.TabIndex = 15;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged_1);
+            this.editstatebox.Location = new System.Drawing.Point(254, 150);
+            this.editstatebox.Name = "editstatebox";
+            this.editstatebox.Size = new System.Drawing.Size(46, 23);
+            this.editstatebox.TabIndex = 15;
+            this.editstatebox.TextChanged += new System.EventHandler(this.textBox6_TextChanged_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 113);
+            this.label2.Location = new System.Drawing.Point(197, 156);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 17);
@@ -624,28 +628,18 @@
             this.label2.Text = "State:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox5
+            // editaddressbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(98, 70);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(94, 23);
-            this.textBox5.TabIndex = 13;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Address:";
+            this.editaddressbox.Location = new System.Drawing.Point(98, 194);
+            this.editaddressbox.Margin = new System.Windows.Forms.Padding(2);
+            this.editaddressbox.Name = "editaddressbox";
+            this.editaddressbox.Size = new System.Drawing.Size(94, 23);
+            this.editaddressbox.TabIndex = 13;
+            this.editaddressbox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(66, 224);
+            this.button2.Location = new System.Drawing.Point(213, 231);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 23);
@@ -657,7 +651,7 @@
             // patroneditlabel
             // 
             this.patroneditlabel.AutoSize = true;
-            this.patroneditlabel.Location = new System.Drawing.Point(8, 33);
+            this.patroneditlabel.Location = new System.Drawing.Point(7, 36);
             this.patroneditlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.patroneditlabel.Name = "patroneditlabel";
             this.patroneditlabel.Size = new System.Drawing.Size(87, 17);
@@ -668,7 +662,7 @@
             // editaddresslabel
             // 
             this.editaddresslabel.AutoSize = true;
-            this.editaddresslabel.Location = new System.Drawing.Point(8, 197);
+            this.editaddresslabel.Location = new System.Drawing.Point(19, 194);
             this.editaddresslabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.editaddresslabel.Name = "editaddresslabel";
             this.editaddresslabel.Size = new System.Drawing.Size(72, 17);
@@ -676,26 +670,27 @@
             this.editaddresslabel.Text = "Address:";
             this.editaddresslabel.Click += new System.EventHandler(this.label19_Click);
             // 
-            // editidlabel
+            // editphonelabel
             // 
-            this.editidlabel.AutoSize = true;
-            this.editidlabel.Location = new System.Drawing.Point(8, 150);
-            this.editidlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.editidlabel.Name = "editidlabel";
-            this.editidlabel.Size = new System.Drawing.Size(89, 17);
-            this.editidlabel.TabIndex = 7;
-            this.editidlabel.Text = "Student ID:";
-            this.editidlabel.Click += new System.EventHandler(this.label18_Click);
+            this.editphonelabel.AutoSize = true;
+            this.editphonelabel.Location = new System.Drawing.Point(7, 150);
+            this.editphonelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.editphonelabel.Name = "editphonelabel";
+            this.editphonelabel.Size = new System.Drawing.Size(84, 17);
+            this.editphonelabel.TabIndex = 7;
+            this.editphonelabel.Text = "Phone No:";
+            this.editphonelabel.Click += new System.EventHandler(this.label18_Click);
             // 
             // editnamelabel
             // 
             this.editnamelabel.AutoSize = true;
-            this.editnamelabel.Location = new System.Drawing.Point(196, 36);
+            this.editnamelabel.Location = new System.Drawing.Point(4, 70);
             this.editnamelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.editnamelabel.Name = "editnamelabel";
-            this.editnamelabel.Size = new System.Drawing.Size(54, 17);
+            this.editnamelabel.Size = new System.Drawing.Size(91, 17);
             this.editnamelabel.TabIndex = 6;
-            this.editnamelabel.Text = "Name:";
+            this.editnamelabel.Text = "First Name:";
+            this.editnamelabel.Click += new System.EventHandler(this.editnamelabel_Click);
             // 
             // label16
             // 
@@ -717,41 +712,32 @@
             this.label15.TabIndex = 4;
             this.label15.Text = "User Information Edit ";
             // 
-            // textBox4
+            // editpatronbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 197);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(94, 23);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
+            this.editpatronbox.Location = new System.Drawing.Point(98, 32);
+            this.editpatronbox.Margin = new System.Windows.Forms.Padding(2);
+            this.editpatronbox.Name = "editpatronbox";
+            this.editpatronbox.Size = new System.Drawing.Size(94, 23);
+            this.editpatronbox.TabIndex = 2;
+            this.editpatronbox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox3
+            // editfnamebox
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 150);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 23);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.editfnamebox.Location = new System.Drawing.Point(98, 70);
+            this.editfnamebox.Margin = new System.Windows.Forms.Padding(2);
+            this.editfnamebox.Name = "editfnamebox";
+            this.editfnamebox.Size = new System.Drawing.Size(96, 23);
+            this.editfnamebox.TabIndex = 1;
+            this.editfnamebox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox2
+            // editphonebox
             // 
-            this.textBox2.Location = new System.Drawing.Point(250, 32);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(98, 33);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.editphonebox.Location = new System.Drawing.Point(98, 150);
+            this.editphonebox.Margin = new System.Windows.Forms.Padding(2);
+            this.editphonebox.Name = "editphonebox";
+            this.editphonebox.Size = new System.Drawing.Size(94, 23);
+            this.editphonebox.TabIndex = 0;
+            this.editphonebox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // splitter1
             // 
@@ -867,20 +853,60 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(196, 110);
+            this.label4.Location = new System.Drawing.Point(196, 73);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 18;
             this.label4.Text = "Email:";
             // 
-            // textBox8
+            // editemailbox
             // 
-            this.textBox8.Location = new System.Drawing.Point(250, 110);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(126, 23);
-            this.textBox8.TabIndex = 19;
+            this.editemailbox.Location = new System.Drawing.Point(254, 70);
+            this.editemailbox.Margin = new System.Windows.Forms.Padding(2);
+            this.editemailbox.Name = "editemailbox";
+            this.editemailbox.Size = new System.Drawing.Size(126, 23);
+            this.editemailbox.TabIndex = 19;
+            // 
+            // reactivatePatron
+            // 
+            this.reactivatePatron.Location = new System.Drawing.Point(2, 150);
+            this.reactivatePatron.Margin = new System.Windows.Forms.Padding(2);
+            this.reactivatePatron.Name = "reactivatePatron";
+            this.reactivatePatron.Size = new System.Drawing.Size(122, 53);
+            this.reactivatePatron.TabIndex = 3;
+            this.reactivatePatron.Text = "Reactivate\r\n  Patron";
+            this.reactivatePatron.UseVisualStyleBackColor = true;
+            this.reactivatePatron.Click += new System.EventHandler(this.reactivatePatron_Click_1);
+            // 
+            // findpatroninfobutton
+            // 
+            this.findpatroninfobutton.Location = new System.Drawing.Point(51, 231);
+            this.findpatroninfobutton.Margin = new System.Windows.Forms.Padding(2);
+            this.findpatroninfobutton.Name = "findpatroninfobutton";
+            this.findpatroninfobutton.Size = new System.Drawing.Size(141, 23);
+            this.findpatroninfobutton.TabIndex = 20;
+            this.findpatroninfobutton.Text = "Find Patron Info";
+            this.findpatroninfobutton.UseVisualStyleBackColor = true;
+            this.findpatroninfobutton.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // lnameeditlabel
+            // 
+            this.lnameeditlabel.AutoSize = true;
+            this.lnameeditlabel.Location = new System.Drawing.Point(3, 107);
+            this.lnameeditlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnameeditlabel.Name = "lnameeditlabel";
+            this.lnameeditlabel.Size = new System.Drawing.Size(90, 17);
+            this.lnameeditlabel.TabIndex = 21;
+            this.lnameeditlabel.Text = "Last Name:";
+            // 
+            // editlnamebox
+            // 
+            this.editlnamebox.Location = new System.Drawing.Point(97, 107);
+            this.editlnamebox.Margin = new System.Windows.Forms.Padding(2);
+            this.editlnamebox.Name = "editlnamebox";
+            this.editlnamebox.Size = new System.Drawing.Size(97, 23);
+            this.editlnamebox.TabIndex = 22;
             // 
             // LibraryGUI
             // 
@@ -964,29 +990,31 @@
         private System.Windows.Forms.TextBox RemovePatronBox;
         private System.Windows.Forms.Button removepatronbutton;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox editpatronbox;
+        private System.Windows.Forms.TextBox editfnamebox;
+        private System.Windows.Forms.TextBox editphonebox;
         private System.Windows.Forms.Label editaddresslabel;
-        private System.Windows.Forms.Label editidlabel;
+        private System.Windows.Forms.Label editphonelabel;
         private System.Windows.Forms.Label editnamelabel;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label patroneditlabel;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox editaddressbox;
+        private System.Windows.Forms.TextBox editstatebox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox editcitybox;
         private System.Windows.Forms.MaskedTextBox checkoutboxpatron;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox searchCombo;
         private System.Windows.Forms.DataGridView searchResults;
         private System.Windows.Forms.Button populateButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox editemailbox;
+        private System.Windows.Forms.Button reactivatePatron;
+        private System.Windows.Forms.Button findpatroninfobutton;
+        private System.Windows.Forms.TextBox editlnamebox;
+        private System.Windows.Forms.Label lnameeditlabel;
     }
 }
 

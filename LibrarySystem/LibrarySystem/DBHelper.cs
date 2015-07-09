@@ -26,7 +26,7 @@ public class DBHelper
     public void setCMD(String s)    {cmd = s;}
 
 
-    public void dbSearch(String s, DataGridView d)//will retrieve whatever table entries you request, but youll need to bind
+    public void dbSearch(String s, DataGridView d)//will retrieve whatever table entries you                                                        request, but youll need to bind
     {                             //then using BindingSource to a datagridview in the GUI.
         try
         {
@@ -39,6 +39,7 @@ public class DBHelper
             DataTable dataset = new DataTable();
             adp.Fill(dataset);
             d.DataSource = dataset;
+            d.Columns.Remove("Inactive");
             connect.Close();
             
                       
