@@ -55,8 +55,10 @@ namespace WindowsFormsApplication1
                 DBHelper db = new DBHelper();
                 String dbString = "INSERT INTO Books(ISBN,Title,Author_Lastname,Author_Firstname,Publication_Date,Shelf_ID,Checked_Out,Out_Date, Due_Date) "+
                   "VALUES (" + ISBN + ",'" + title + "','" + authorLast + "','" + authorFirst + "','" + pubDate + "','" + shelfID + "', 'N',null,null);";
-                Console.WriteLine(dbString);    
+                   
                 db.dbUpdate(dbString);
+                MessageBox.Show("Book " + title + " added successfully");
+                this.Close();
             }
         }
 

@@ -65,9 +65,15 @@
             this.userinfolabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.reactivatePatron = new System.Windows.Forms.Button();
             this.removepatronbutton = new System.Windows.Forms.Button();
             this.RemovePatronBox = new System.Windows.Forms.TextBox();
             this.removePatronlabel = new System.Windows.Forms.Label();
+            this.editlnamebox = new System.Windows.Forms.TextBox();
+            this.lnameeditlabel = new System.Windows.Forms.Label();
+            this.findpatroninfobutton = new System.Windows.Forms.Button();
+            this.editemailbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.editcitybox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.editstatebox = new System.Windows.Forms.TextBox();
@@ -84,21 +90,15 @@
             this.editfnamebox = new System.Windows.Forms.TextBox();
             this.editphonebox = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.SearchBox = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.searchbookradio = new System.Windows.Forms.RadioButton();
-            this.searchpatronradio = new System.Windows.Forms.RadioButton();
-            this.searchbutton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.searchResults = new System.Windows.Forms.DataGridView();
             this.searchCombo = new System.Windows.Forms.ComboBox();
+            this.searchResults = new System.Windows.Forms.DataGridView();
+            this.searchbutton = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.searchpatronradio = new System.Windows.Forms.RadioButton();
+            this.searchbookradio = new System.Windows.Forms.RadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.populateButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.editemailbox = new System.Windows.Forms.TextBox();
-            this.reactivatePatron = new System.Windows.Forms.Button();
-            this.findpatroninfobutton = new System.Windows.Forms.Button();
-            this.lnameeditlabel = new System.Windows.Forms.Label();
-            this.editlnamebox = new System.Windows.Forms.TextBox();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -109,9 +109,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabsystem
@@ -148,7 +148,6 @@
             this.Circulation.Size = new System.Drawing.Size(537, 303);
             this.Circulation.TabIndex = 0;
             this.Circulation.Text = "Circulation";
-            this.Circulation.Click += new System.EventHandler(this.Circulation_Click);
             // 
             // checkoutboxpatron
             // 
@@ -168,7 +167,6 @@
             this.Checkinlabel.Size = new System.Drawing.Size(133, 17);
             this.Checkinlabel.TabIndex = 12;
             this.Checkinlabel.Text = "Enter Book ISBN:";
-            this.Checkinlabel.Click += new System.EventHandler(this.Checkinlabel_Click);
             // 
             // checkinbox
             // 
@@ -177,6 +175,7 @@
             this.checkinbox.Name = "checkinbox";
             this.checkinbox.Size = new System.Drawing.Size(252, 23);
             this.checkinbox.TabIndex = 11;
+            this.checkinbox.TextChanged += new System.EventHandler(this.checkinbox_TextChanged);
             // 
             // checkoutbutton
             // 
@@ -217,7 +216,6 @@
             this.checkoutboxbook.Name = "checkoutboxbook";
             this.checkoutboxbook.Size = new System.Drawing.Size(145, 23);
             this.checkoutboxbook.TabIndex = 6;
-            this.checkoutboxbook.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // removebookbox
             // 
@@ -237,7 +235,6 @@
             this.RemoveBooklabel.Size = new System.Drawing.Size(133, 17);
             this.RemoveBooklabel.TabIndex = 2;
             this.RemoveBooklabel.Text = "Enter Book ISBN:";
-            this.RemoveBooklabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // removebookbutton
             // 
@@ -374,7 +371,6 @@
             this.statelabel.Size = new System.Drawing.Size(51, 17);
             this.statelabel.TabIndex = 12;
             this.statelabel.Text = "State:";
-            this.statelabel.Click += new System.EventHandler(this.label13_Click);
             // 
             // citylabel
             // 
@@ -386,7 +382,6 @@
             this.citylabel.Size = new System.Drawing.Size(40, 17);
             this.citylabel.TabIndex = 11;
             this.citylabel.Text = "City:";
-            this.citylabel.Click += new System.EventHandler(this.label12_Click);
             // 
             // firstnamelabel
             // 
@@ -409,7 +404,6 @@
             this.lastnamelabel.Size = new System.Drawing.Size(44, 17);
             this.lastnamelabel.TabIndex = 9;
             this.lastnamelabel.Text = "Last ";
-            this.lastnamelabel.Click += new System.EventHandler(this.label10_Click);
             // 
             // addressbox
             // 
@@ -430,7 +424,6 @@
             this.addresslabel.Size = new System.Drawing.Size(72, 17);
             this.addresslabel.TabIndex = 7;
             this.addresslabel.Text = "Address:";
-            this.addresslabel.Click += new System.EventHandler(this.label9_Click_1);
             // 
             // emailbox
             // 
@@ -477,7 +470,6 @@
             this.IDlabel.Size = new System.Drawing.Size(52, 17);
             this.IDlabel.TabIndex = 2;
             this.IDlabel.Text = "Email:";
-            this.IDlabel.Click += new System.EventHandler(this.label7_Click);
             // 
             // namelabel1
             // 
@@ -489,7 +481,6 @@
             this.namelabel1.Size = new System.Drawing.Size(54, 17);
             this.namelabel1.TabIndex = 1;
             this.namelabel1.Text = "Name:";
-            this.namelabel1.Click += new System.EventHandler(this.label6_Click);
             // 
             // userinfolabel
             // 
@@ -502,7 +493,6 @@
             this.userinfolabel.Size = new System.Drawing.Size(317, 17);
             this.userinfolabel.TabIndex = 0;
             this.userinfolabel.Text = "New User Information (All Boxes Required)";
-            this.userinfolabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // tabPage2
             // 
@@ -561,6 +551,17 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
+            // reactivatePatron
+            // 
+            this.reactivatePatron.Location = new System.Drawing.Point(2, 150);
+            this.reactivatePatron.Margin = new System.Windows.Forms.Padding(2);
+            this.reactivatePatron.Name = "reactivatePatron";
+            this.reactivatePatron.Size = new System.Drawing.Size(122, 53);
+            this.reactivatePatron.TabIndex = 3;
+            this.reactivatePatron.Text = "Reactivate\r\n  Patron";
+            this.reactivatePatron.UseVisualStyleBackColor = true;
+            this.reactivatePatron.Click += new System.EventHandler(this.reactivatePatron_Click_1);
+            // 
             // removepatronbutton
             // 
             this.removepatronbutton.Location = new System.Drawing.Point(2, 91);
@@ -590,6 +591,53 @@
             this.removePatronlabel.TabIndex = 0;
             this.removePatronlabel.Text = "Patron ID:";
             // 
+            // editlnamebox
+            // 
+            this.editlnamebox.Location = new System.Drawing.Point(97, 107);
+            this.editlnamebox.Margin = new System.Windows.Forms.Padding(2);
+            this.editlnamebox.Name = "editlnamebox";
+            this.editlnamebox.Size = new System.Drawing.Size(97, 23);
+            this.editlnamebox.TabIndex = 22;
+            // 
+            // lnameeditlabel
+            // 
+            this.lnameeditlabel.AutoSize = true;
+            this.lnameeditlabel.Location = new System.Drawing.Point(3, 107);
+            this.lnameeditlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnameeditlabel.Name = "lnameeditlabel";
+            this.lnameeditlabel.Size = new System.Drawing.Size(90, 17);
+            this.lnameeditlabel.TabIndex = 21;
+            this.lnameeditlabel.Text = "Last Name:";
+            // 
+            // findpatroninfobutton
+            // 
+            this.findpatroninfobutton.Location = new System.Drawing.Point(51, 231);
+            this.findpatroninfobutton.Margin = new System.Windows.Forms.Padding(2);
+            this.findpatroninfobutton.Name = "findpatroninfobutton";
+            this.findpatroninfobutton.Size = new System.Drawing.Size(141, 23);
+            this.findpatroninfobutton.TabIndex = 20;
+            this.findpatroninfobutton.Text = "Find Patron Info";
+            this.findpatroninfobutton.UseVisualStyleBackColor = true;
+            this.findpatroninfobutton.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // editemailbox
+            // 
+            this.editemailbox.Location = new System.Drawing.Point(254, 70);
+            this.editemailbox.Margin = new System.Windows.Forms.Padding(2);
+            this.editemailbox.Name = "editemailbox";
+            this.editemailbox.Size = new System.Drawing.Size(126, 23);
+            this.editemailbox.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(196, 73);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Email:";
+            // 
             // editcitybox
             // 
             this.editcitybox.Location = new System.Drawing.Point(252, 195);
@@ -607,7 +655,6 @@
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "City:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // editstatebox
             // 
@@ -626,7 +673,6 @@
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "State:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // editaddressbox
             // 
@@ -657,7 +703,6 @@
             this.patroneditlabel.Size = new System.Drawing.Size(87, 17);
             this.patroneditlabel.TabIndex = 10;
             this.patroneditlabel.Text = "Patron ID*:";
-            this.patroneditlabel.Click += new System.EventHandler(this.label17_Click);
             // 
             // editaddresslabel
             // 
@@ -668,7 +713,6 @@
             this.editaddresslabel.Size = new System.Drawing.Size(72, 17);
             this.editaddresslabel.TabIndex = 8;
             this.editaddresslabel.Text = "Address:";
-            this.editaddresslabel.Click += new System.EventHandler(this.label19_Click);
             // 
             // editphonelabel
             // 
@@ -679,7 +723,6 @@
             this.editphonelabel.Size = new System.Drawing.Size(84, 17);
             this.editphonelabel.TabIndex = 7;
             this.editphonelabel.Text = "Phone No:";
-            this.editphonelabel.Click += new System.EventHandler(this.label18_Click);
             // 
             // editnamelabel
             // 
@@ -690,7 +733,6 @@
             this.editnamelabel.Size = new System.Drawing.Size(91, 17);
             this.editnamelabel.TabIndex = 6;
             this.editnamelabel.Text = "First Name:";
-            this.editnamelabel.Click += new System.EventHandler(this.editnamelabel_Click);
             // 
             // label16
             // 
@@ -748,61 +790,6 @@
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
-            // SearchBox
-            // 
-            this.SearchBox.Location = new System.Drawing.Point(155, 34);
-            this.SearchBox.Margin = new System.Windows.Forms.Padding(2);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(288, 23);
-            this.SearchBox.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(275, 28);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(221, 110);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // searchbookradio
-            // 
-            this.searchbookradio.AutoSize = true;
-            this.searchbookradio.Location = new System.Drawing.Point(21, 5);
-            this.searchbookradio.Margin = new System.Windows.Forms.Padding(2);
-            this.searchbookradio.Name = "searchbookradio";
-            this.searchbookradio.Size = new System.Drawing.Size(62, 21);
-            this.searchbookradio.TabIndex = 4;
-            this.searchbookradio.Text = "Book";
-            this.searchbookradio.UseVisualStyleBackColor = true;
-            this.searchbookradio.CheckedChanged += new System.EventHandler(this.searchbookradio_CheckedChanged);
-            // 
-            // searchpatronradio
-            // 
-            this.searchpatronradio.AutoSize = true;
-            this.searchpatronradio.Location = new System.Drawing.Point(99, 5);
-            this.searchpatronradio.Margin = new System.Windows.Forms.Padding(2);
-            this.searchpatronradio.Name = "searchpatronradio";
-            this.searchpatronradio.Size = new System.Drawing.Size(74, 21);
-            this.searchpatronradio.TabIndex = 5;
-            this.searchpatronradio.Text = "Patron";
-            this.searchpatronradio.UseVisualStyleBackColor = true;
-            this.searchpatronradio.CheckedChanged += new System.EventHandler(this.searchpatronbutton_CheckedChanged);
-            // 
-            // searchbutton
-            // 
-            this.searchbutton.Location = new System.Drawing.Point(447, 33);
-            this.searchbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(74, 26);
-            this.searchbutton.TabIndex = 6;
-            this.searchbutton.Text = "Search";
-            this.searchbutton.UseVisualStyleBackColor = true;
-            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gold;
@@ -818,17 +805,6 @@
             this.tabPage1.Size = new System.Drawing.Size(537, 303);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Search";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click_1);
-            // 
-            // searchResults
-            // 
-            this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchResults.Location = new System.Drawing.Point(21, 83);
-            this.searchResults.Name = "searchResults";
-            this.searchResults.Size = new System.Drawing.Size(496, 213);
-            this.searchResults.TabIndex = 7;
             // 
             // searchCombo
             // 
@@ -840,6 +816,70 @@
             this.searchCombo.TabIndex = 8;
             this.searchCombo.SelectedIndexChanged += new System.EventHandler(this.searchCombo_SelectedIndexChanged);
             // 
+            // searchResults
+            // 
+            this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Location = new System.Drawing.Point(21, 83);
+            this.searchResults.Name = "searchResults";
+            this.searchResults.Size = new System.Drawing.Size(496, 213);
+            this.searchResults.TabIndex = 7;
+            // 
+            // searchbutton
+            // 
+            this.searchbutton.Location = new System.Drawing.Point(447, 33);
+            this.searchbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(74, 26);
+            this.searchbutton.TabIndex = 6;
+            this.searchbutton.Text = "Search";
+            this.searchbutton.UseVisualStyleBackColor = true;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Location = new System.Drawing.Point(155, 34);
+            this.SearchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(288, 23);
+            this.SearchBox.TabIndex = 1;
+            // 
+            // searchpatronradio
+            // 
+            this.searchpatronradio.AutoSize = true;
+            this.searchpatronradio.Location = new System.Drawing.Point(99, 5);
+            this.searchpatronradio.Margin = new System.Windows.Forms.Padding(2);
+            this.searchpatronradio.Name = "searchpatronradio";
+            this.searchpatronradio.Size = new System.Drawing.Size(74, 21);
+            this.searchpatronradio.TabIndex = 5;
+            this.searchpatronradio.Text = "Patron";
+            this.searchpatronradio.UseVisualStyleBackColor = true;
+            this.searchpatronradio.CheckedChanged += new System.EventHandler(this.searchpatronbutton_CheckedChanged);
+            // 
+            // searchbookradio
+            // 
+            this.searchbookradio.AutoSize = true;
+            this.searchbookradio.Location = new System.Drawing.Point(21, 5);
+            this.searchbookradio.Margin = new System.Windows.Forms.Padding(2);
+            this.searchbookradio.Name = "searchbookradio";
+            this.searchbookradio.Size = new System.Drawing.Size(62, 21);
+            this.searchbookradio.TabIndex = 4;
+            this.searchbookradio.Text = "Book";
+            this.searchbookradio.UseVisualStyleBackColor = true;
+            this.searchbookradio.CheckedChanged += new System.EventHandler(this.searchbookradio_CheckedChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(275, 28);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(221, 110);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // populateButton
             // 
             this.populateButton.Location = new System.Drawing.Point(7, 12);
@@ -849,64 +889,6 @@
             this.populateButton.Text = "Populate DB";
             this.populateButton.UseVisualStyleBackColor = true;
             this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(196, 73);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Email:";
-            // 
-            // editemailbox
-            // 
-            this.editemailbox.Location = new System.Drawing.Point(254, 70);
-            this.editemailbox.Margin = new System.Windows.Forms.Padding(2);
-            this.editemailbox.Name = "editemailbox";
-            this.editemailbox.Size = new System.Drawing.Size(126, 23);
-            this.editemailbox.TabIndex = 19;
-            // 
-            // reactivatePatron
-            // 
-            this.reactivatePatron.Location = new System.Drawing.Point(2, 150);
-            this.reactivatePatron.Margin = new System.Windows.Forms.Padding(2);
-            this.reactivatePatron.Name = "reactivatePatron";
-            this.reactivatePatron.Size = new System.Drawing.Size(122, 53);
-            this.reactivatePatron.TabIndex = 3;
-            this.reactivatePatron.Text = "Reactivate\r\n  Patron";
-            this.reactivatePatron.UseVisualStyleBackColor = true;
-            this.reactivatePatron.Click += new System.EventHandler(this.reactivatePatron_Click_1);
-            // 
-            // findpatroninfobutton
-            // 
-            this.findpatroninfobutton.Location = new System.Drawing.Point(51, 231);
-            this.findpatroninfobutton.Margin = new System.Windows.Forms.Padding(2);
-            this.findpatroninfobutton.Name = "findpatroninfobutton";
-            this.findpatroninfobutton.Size = new System.Drawing.Size(141, 23);
-            this.findpatroninfobutton.TabIndex = 20;
-            this.findpatroninfobutton.Text = "Find Patron Info";
-            this.findpatroninfobutton.UseVisualStyleBackColor = true;
-            this.findpatroninfobutton.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // lnameeditlabel
-            // 
-            this.lnameeditlabel.AutoSize = true;
-            this.lnameeditlabel.Location = new System.Drawing.Point(3, 107);
-            this.lnameeditlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lnameeditlabel.Name = "lnameeditlabel";
-            this.lnameeditlabel.Size = new System.Drawing.Size(90, 17);
-            this.lnameeditlabel.TabIndex = 21;
-            this.lnameeditlabel.Text = "Last Name:";
-            // 
-            // editlnamebox
-            // 
-            this.editlnamebox.Location = new System.Drawing.Point(97, 107);
-            this.editlnamebox.Margin = new System.Windows.Forms.Padding(2);
-            this.editlnamebox.Name = "editlnamebox";
-            this.editlnamebox.Size = new System.Drawing.Size(97, 23);
-            this.editlnamebox.TabIndex = 22;
             // 
             // LibraryGUI
             // 
@@ -935,10 +917,10 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

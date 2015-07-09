@@ -33,11 +33,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             addbookpop f2 = new addbookpop();
@@ -61,37 +56,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Circulation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
         private void process1_Exited(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SearchLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -99,26 +64,6 @@ namespace WindowsFormsApplication1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             removebookbox.MaxLength = 13;
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -138,114 +83,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void searchpatronbutton_CheckedChanged(object sender, EventArgs e)
         {
@@ -269,37 +107,7 @@ namespace WindowsFormsApplication1
             }
 
         }
-
-        private void statebox_TextChanged(object sender, EventArgs e)
-        {
-            statebox.MaxLength = 2;
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged_1(object sender, EventArgs e)
-        {
-            editstatebox.MaxLength = 2;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Checkinlabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void checkoutbutton_Click(object sender, EventArgs e)
         {
             String sISBN = checkoutboxbook.Text;
@@ -330,32 +138,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void checkoutboxpatron_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            checkoutboxpatron.MaxLength = 5;
-        }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchbookradio_CheckedChanged(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
@@ -474,10 +257,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void reactivatePatron_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
@@ -524,6 +303,92 @@ namespace WindowsFormsApplication1
         {
             checkinbox.MaxLength = 13;
         }
+
+        private void statebox_TextChanged(object sender, EventArgs e)
+        {
+            statebox.MaxLength = 2;
+        }
+
+
+        private void checkoutboxpatron_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            checkoutboxpatron.MaxLength = 5;
+        }
+
+        private void textBox6_TextChanged_1(object sender, EventArgs e)
+        {
+            editstatebox.MaxLength = 2;
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void searchCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchbookradio_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+        }
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+        }
+
+      
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 
