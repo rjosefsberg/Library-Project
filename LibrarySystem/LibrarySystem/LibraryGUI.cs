@@ -1,3 +1,4 @@
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -402,6 +403,83 @@ namespace WindowsFormsApplication1
         {
             DBHelper db = new DBHelper();
             db.dbPopulate();
+        }
+
+        private void patronadd_Click(object sender, EventArgs e)
+        {
+            DBHelper db = new DBHelper();
+            MySqlDataReader myReader = null;
+            MySqlConnection myConnection = new MySqlConnection("Server = localhost; Database=libdb;Uid = root;password=root");
+            MySqlCommand myCommand = new MySqlCommand("select count(Patron_ID) from patron", myConnection);
+            String idCount = null;
+            myConnection.Open();
+            myReader = myCommand.ExecuteReader();
+            while (myReader.Read())
+            {
+                idCount = myReader[0].ToString();
+            }
+
+            int intCount = int.Parse(idCount);
+            intCount++;
+
+            String newID = null;
+            if (idCount.Length == 4)
+                newID = "1" + intCount;
+            else if (idCount.Length == 3)
+                newID = "10" + intCount;
+            else if (idCount.Length == 2)
+                newID = "100" + intCount;
+            else
+                newID = "1000" + intCount;
+
+            
+            String addPatron = "INSERT INTO patron (Patron_ID, Last_Name, First_Name, Email, Telephone, Address, City, State, Inactive) values ('"+newID+"','" + this.lastnamebox.Text + "','" + this.firstnamebox.Text + "','" + this.emailbox.Text + "','" + this.addressbox.Text + "','" + citybox.Text + "','" + this.statebox.Text + "','" + this.phonebox.Text + "', FALSE);";
+
+            
+            db.dbUpdate(addPatron);
+            myConnection.Close();
+        }
+
+        private void removepatronbutton_Click(object sender, EventArgs e)
+        {
+            DBHelper db = new DBHelper();
+            String sPatron_ID = RemovePatronBox.Text;
+            if (sPatron_ID.Length != 5)
+            {
+                MessageBox.Show("Incorrect Length for Patron ID");
+            }
+
+            else
+            {
+                String dbString = "UPDATE patron SET Inactive = TRUE where Patron_ID = " + sPatron_ID + ";";
+                db.dbUpdate(dbString);
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            DBHelper db = new DBHelper();
+            String conString = "datasource = localhost";
+            String Query = "Update patron SET Last_Name = '" + this.textBox2.Text + "',First_Name = '" + this.textBox8.Text + "',Email = '" + this.textBox4.Text + "',Address = '" + this.textBox5.Text + "',City = '" + textBox7.Text + "',State = '" + this.textBox6.Text + "',Telephone = '" + this.textBox3.Text + "' WHERE patron_ID = '" + textBox1.Text + "';";
+            db.dbUpdate(Query);
+            //MySqlConnection myConnection = new MySqlConnection(conString);
+            //MySqlCommand myCommand = new MySqlCommand(Query, myConnection);
+            //MySqlDataReader myReader;
+
+            /*try
+            {
+                myConnection.Open();
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read()) ;
+                {
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }*/
         }
             
                 

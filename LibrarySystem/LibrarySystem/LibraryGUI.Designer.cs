@@ -45,7 +45,7 @@
             this.Patron = new System.Windows.Forms.TabPage();
             this.patrontabs = new System.Windows.Forms.TabControl();
             this.addpatrontab = new System.Windows.Forms.TabPage();
-            this.zipbox = new System.Windows.Forms.TextBox();
+            this.phonebox = new System.Windows.Forms.TextBox();
             this.statebox = new System.Windows.Forms.TextBox();
             this.citybox = new System.Windows.Forms.TextBox();
             this.patronadd = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             this.lastnamelabel = new System.Windows.Forms.Label();
             this.addressbox = new System.Windows.Forms.TextBox();
             this.addresslabel = new System.Windows.Forms.Label();
-            this.studentidbox = new System.Windows.Forms.TextBox();
+            this.emailbox = new System.Windows.Forms.TextBox();
             this.firstnamebox = new System.Windows.Forms.TextBox();
             this.lastnamebox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -95,6 +95,8 @@
             this.searchResults = new System.Windows.Forms.DataGridView();
             this.searchCombo = new System.Windows.Forms.ComboBox();
             this.populateButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabsystem.SuspendLayout();
             this.Circulation.SuspendLayout();
             this.Patron.SuspendLayout();
@@ -283,7 +285,7 @@
             // 
             // addpatrontab
             // 
-            this.addpatrontab.Controls.Add(this.zipbox);
+            this.addpatrontab.Controls.Add(this.phonebox);
             this.addpatrontab.Controls.Add(this.statebox);
             this.addpatrontab.Controls.Add(this.citybox);
             this.addpatrontab.Controls.Add(this.patronadd);
@@ -294,7 +296,7 @@
             this.addpatrontab.Controls.Add(this.lastnamelabel);
             this.addpatrontab.Controls.Add(this.addressbox);
             this.addpatrontab.Controls.Add(this.addresslabel);
-            this.addpatrontab.Controls.Add(this.studentidbox);
+            this.addpatrontab.Controls.Add(this.emailbox);
             this.addpatrontab.Controls.Add(this.firstnamebox);
             this.addpatrontab.Controls.Add(this.lastnamebox);
             this.addpatrontab.Controls.Add(this.label8);
@@ -311,13 +313,13 @@
             this.addpatrontab.Text = "Add Patron ";
             this.addpatrontab.UseVisualStyleBackColor = true;
             // 
-            // zipbox
+            // phonebox
             // 
-            this.zipbox.Location = new System.Drawing.Point(282, 192);
-            this.zipbox.Margin = new System.Windows.Forms.Padding(2);
-            this.zipbox.Name = "zipbox";
-            this.zipbox.Size = new System.Drawing.Size(121, 23);
-            this.zipbox.TabIndex = 17;
+            this.phonebox.Location = new System.Drawing.Point(282, 192);
+            this.phonebox.Margin = new System.Windows.Forms.Padding(2);
+            this.phonebox.Name = "phonebox";
+            this.phonebox.Size = new System.Drawing.Size(121, 23);
+            this.phonebox.TabIndex = 17;
             // 
             // statebox
             // 
@@ -347,6 +349,7 @@
             this.patronadd.TabIndex = 14;
             this.patronadd.Text = "Add Patron";
             this.patronadd.UseVisualStyleBackColor = true;
+            this.patronadd.Click += new System.EventHandler(this.patronadd_Click);
             // 
             // ziplabel
             // 
@@ -427,14 +430,14 @@
             this.addresslabel.Text = "Address:";
             this.addresslabel.Click += new System.EventHandler(this.label9_Click_1);
             // 
-            // studentidbox
+            // emailbox
             // 
-            this.studentidbox.Location = new System.Drawing.Point(118, 104);
-            this.studentidbox.Margin = new System.Windows.Forms.Padding(2);
-            this.studentidbox.Name = "studentidbox";
-            this.studentidbox.Size = new System.Drawing.Size(76, 23);
-            this.studentidbox.TabIndex = 6;
-            this.studentidbox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.emailbox.Location = new System.Drawing.Point(118, 104);
+            this.emailbox.Margin = new System.Windows.Forms.Padding(2);
+            this.emailbox.Name = "emailbox";
+            this.emailbox.Size = new System.Drawing.Size(76, 23);
+            this.emailbox.TabIndex = 6;
+            this.emailbox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // firstnamebox
             // 
@@ -529,6 +532,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AccessibleName = "editInfo";
+            this.splitContainer1.Panel2.Controls.Add(this.textBox8);
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.textBox7);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.textBox6);
@@ -561,6 +566,7 @@
             this.removepatronbutton.TabIndex = 2;
             this.removepatronbutton.Text = "Remove Patron";
             this.removepatronbutton.UseVisualStyleBackColor = true;
+            this.removepatronbutton.Click += new System.EventHandler(this.removepatronbutton_Click);
             // 
             // RemovePatronBox
             // 
@@ -585,7 +591,7 @@
             this.textBox7.Location = new System.Drawing.Point(250, 73);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(94, 23);
+            this.textBox7.Size = new System.Drawing.Size(126, 23);
             this.textBox7.TabIndex = 17;
             // 
             // label3
@@ -646,6 +652,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // patroneditlabel
             // 
@@ -733,7 +740,7 @@
             this.textBox2.Location = new System.Drawing.Point(250, 32);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 23);
+            this.textBox2.Size = new System.Drawing.Size(126, 23);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -857,6 +864,24 @@
             this.populateButton.UseVisualStyleBackColor = true;
             this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(196, 110);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Email:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(250, 110);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(126, 23);
+            this.textBox8.TabIndex = 19;
+            // 
             // LibraryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -926,14 +951,14 @@
         private System.Windows.Forms.Label lastnamelabel;
         private System.Windows.Forms.TextBox addressbox;
         private System.Windows.Forms.Label addresslabel;
-        private System.Windows.Forms.TextBox studentidbox;
+        private System.Windows.Forms.TextBox emailbox;
         private System.Windows.Forms.TextBox firstnamebox;
         private System.Windows.Forms.TextBox lastnamebox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label IDlabel;
         private System.Windows.Forms.Label namelabel1;
         private System.Windows.Forms.Label userinfolabel;
-        private System.Windows.Forms.TextBox zipbox;
+        private System.Windows.Forms.TextBox phonebox;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label removePatronlabel;
         private System.Windows.Forms.TextBox RemovePatronBox;
@@ -960,6 +985,8 @@
         private System.Windows.Forms.ComboBox searchCombo;
         private System.Windows.Forms.DataGridView searchResults;
         private System.Windows.Forms.Button populateButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
 
