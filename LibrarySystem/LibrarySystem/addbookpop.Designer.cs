@@ -134,7 +134,7 @@ namespace WindowsFormsApplication1
             this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Shelf ID:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           // this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -145,7 +145,7 @@ namespace WindowsFormsApplication1
             this.label2.Size = new System.Drawing.Size(106, 51);
             this.label2.TabIndex = 2;
             this.label2.Text = "Publication\r\n     Date:\r\n(yyyy-mm-dd)";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
